@@ -1,0 +1,78 @@
+<ng-sidebar-container>
+  <ng-sidebar [opened]="opened">
+    <div class="grid">
+      <div class="col menuBar2">
+
+        <i class="pi pi-bars" style="font-size: 1.5rem" (click)="SidebarModule()"></i>
+
+      </div>
+    </div>
+    <hr>
+    <div class="grid">
+      <div class="col">
+        <ul class="list_inline">
+          <li class="li"><a routerLink="/" (click)="SidebarModule()">
+            <i class="pi pi-info-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
+            Informations
+            </a></li>
+          <li><a routerLink="/formation" (click)="SidebarModule()">
+            <i class="pi pi-sitemap" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              Formations
+            </a></li>
+          <li><a routerLink="/experience" (click)="SidebarModule()">
+            <i class="pi pi-chart-bar" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              Experience
+            </a></li>
+          <li><a routerLink="/competence" (click)="SidebarModule()">
+            <i class="pi pi-check-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              Competence
+            </a></li>
+          <li><a routerLink="/compte" (click)="SidebarModule()">
+            <i class="pi pi-user" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              Comptes
+            </a></li>
+          <li><a routerLink="/language" (click)="SidebarModule()">
+            <i class="pi pi-flag" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              Language
+            </a></li>
+          <li><a routerLink="/leisure" (click)="SidebarModule()">
+            <i class="pi pi-heart" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              Leisure
+            </a></li>
+
+          <br><br><span style="color:#bdc3c7">Others</span>
+          <hr style="background-color:#bdc3c7">
+          <li><a routerLink="/viewCV" (click)="SidebarModule()">
+            <i class="pi pi-eye" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              View CV
+            </a></li>
+          <li><a routerLink="/templates" (click)="SidebarModule()">
+            <i class="pi pi-download" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              Download
+            </a></li>
+          <li><a routerLink="/aboutUS" (click)="SidebarModule()">
+            <i class="pi pi-question-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              about us
+            </a></li>
+        </ul>
+      </div>
+    </div>
+  </ng-sidebar>
+
+  <!-- content after sidebar -->
+  <div ng-sidebar-content>
+    <div class="grid">
+      <div class="col menuBar">
+
+     <i class="pi pi-bars" style="font-size: 1.5rem" (click)="SidebarModule()"></i>
+
+    </div>
+    </div>
+
+    <div>
+      <router-outlet></router-outlet>
+
+    </div>
+
+  </div>
+</ng-sidebar-container>

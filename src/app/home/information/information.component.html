@@ -1,0 +1,387 @@
+<h2 style="color: #00b7e0">Informations</h2>
+
+
+<!-- section Picture -->
+
+
+<p-accordion>
+  <p-accordionTab header="Picture">
+    picture
+  </p-accordionTab>
+
+
+  <!-- section Personal Information -->
+
+
+  <p-accordionTab header="Personal Information">
+
+    <strong>
+      <i>
+        <p>Name : </p>
+        <p>First Name : </p>
+        <p>Date of Birth : </p>
+        <p>Place of Birth : </p>
+        <p>Address (street) : </p>
+      </i>
+    </strong>
+
+    <!-- start Button Plus -->
+    <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial [model]="TooltipIformation" className="speeddial-right" direction="up"></p-speedDial>
+      </div>
+    </div>
+    <!-- end Button Plus -->
+
+    <!-- start ADD Information PopPup Dialog -->
+    <p-dialog header="Add" [(visible)]="InformationADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+
+          <!-- firstName -->
+          <div class="field">
+            <label for="FirstName" class="block TextColorGray">First Name : </label>
+            <input id="FirstName" type="username" pInputText />
+          </div>
+
+          <!-- lastName -->
+          <div class="field">
+            <label for="lastName" class="block TextColorGray">Last Name : </label>
+            <input id="lastName" type="username" pInputText />
+          </div>
+
+          <!-- birth date -->
+          <div class="field">
+            <label for="birthDate" class="block TextColorGray">Birth Date : </label>
+            <input id="birthDate" type="date" pInputText />
+          </div>
+
+          <!-- birthplace -->
+          <div class="field">
+            <label for="birthPlace" class="block TextColorGray">Birth Place :
+            </label>
+            <input id="birthPlace" type="username" pInputText />
+          </div>
+
+          <!-- address -->
+          <div class="field">
+            <label for="address" class="block TextColorGray">Address (rue) :
+            </label>
+            <input id="address" type="mailto" pInputText />
+          </div>
+
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="InformationADD=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end ADD Information PopPup Dialog -->
+    <!-- start EDIT Information PopPup Dialog -->
+    <p-dialog header="EDIT" [(visible)]="InformationEDIT" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+
+          <!-- firstName -->
+          <div class="field">
+            <label for="FirstName" class="block TextColorGray">First Name : </label>
+            <input id="FirstName" type="username" pInputText />
+          </div>
+
+          <!-- lastName -->
+          <div class="field">
+            <label for="lastName" class="block TextColorGray">Last Name : </label>
+            <input id="lastName" type="username" pInputText />
+          </div>
+
+          <!-- birth date -->
+          <div class="field">
+            <label for="birthDate" class="block TextColorGray">Birth Date : </label>
+            <input id="birthDate" type="date" pInputText />
+          </div>
+
+          <!-- birthplace -->
+          <div class="field">
+            <label for="birthPlace" class="block TextColorGray">Birth Place :
+            </label>
+            <input id="birthPlace" type="username" pInputText />
+          </div>
+
+          <!-- address -->
+          <div class="field">
+            <label for="address" class="block TextColorGray">Address (rue) :
+            </label>
+            <input id="address" type="mailto" pInputText />
+          </div>
+
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="InformationEDIT=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end EDIT Information PopPup Dialog -->
+  </p-accordionTab>
+
+
+  <!-- section Occupation -->
+
+
+  <p-accordionTab header="Occupation">
+    <i (click)="OccupationEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
+    <i class="pi pi-trash"></i>&nbsp;&nbsp;
+    example : Wev developper
+
+    <!-- start Button Plus -->
+    <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial (click)="OccupationADDfunction()" className="speeddial-right" direction="up"></p-speedDial>
+      </div>
+    </div>
+    <!-- end Button Plus -->
+
+    <!-- start ADD Occupation PopPup Dialog -->
+    <p-dialog header="ADD" [(visible)]="OccupationADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- occupation -->
+          <div class="field">
+            <label for="Occupation" class="block TextColorGray">Occupation : </label>
+            <input id="Occupation" type="username" pInputText />
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="OccupationADD=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end ADD Occupation PopPup Dialog -->
+    <!-- start EDIT Occupation PopPup Dialog -->
+    <p-dialog header="EDIT" [(visible)]="OccupationEDIT" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- occupation -->
+          <div class="field">
+            <label for="Occupation" class="block TextColorGray">Occupation : </label>
+            <input id="Occupation" type="username" pInputText />
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="OccupationEDIT=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end EDIT Occupation PopPup Dialog -->
+  </p-accordionTab>
+
+
+  <!-- section contact -->
+
+
+  <p-accordionTab header="Contact">
+    <i (click)="ContactEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
+    <i class="pi pi-trash"></i>&nbsp;&nbsp;
+    Contact
+
+    <!-- start Button Plus -->
+    <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial (click)="ContactADDfunction()" className="speeddial-right" direction="up"></p-speedDial>
+      </div>
+    </div>
+    <!-- end Button Plus -->
+
+    <!-- start ADD Contact PopPup Dialog -->
+    <p-dialog header="ADD" [(visible)]="ContactADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Contact -->
+          <div class="field">
+            <label for="Contact" class="block TextColorGray">Contact : </label>
+            <input id="Contact" type="username" pInputText />
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="ContactADD=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end ADD Contact PopPup Dialog -->
+    <!-- start EDIT Contact PopPup Dialog -->
+    <p-dialog header="EDIT" [(visible)]="ContactEDIT" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Contact -->
+          <div class="field">
+            <label for="Contact" class="block TextColorGray">Contact : </label>
+            <input id="Contact" type="username" pInputText />
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="ContactEDIT=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end EDIT Occupation PopPup Dialog -->
+  </p-accordionTab>
+
+
+  <!-- section Email -->
+
+
+  <p-accordionTab header="Email">
+    <i (click)="EmailEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
+    <i class="pi pi-trash"></i>&nbsp;&nbsp;
+    Email
+
+    <!-- start Button Plus -->
+    <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial (click)="EmailADDfunction()" className="speeddial-right" direction="up"></p-speedDial>
+      </div>
+    </div>
+    <!-- end Button Plus -->
+
+    <!-- start ADD Email PopPup Dialog -->
+    <p-dialog header="ADD" [(visible)]="EmailADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Email -->
+          <div class="field">
+            <label for="Email" class="block TextColorGray">Email : </label>
+            <input id="Email" type="username" pInputText />
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="EmailADD=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end ADD Email PopPup Dialog -->
+    <!-- start EDIT Email PopPup Dialog -->
+    <p-dialog header="EDIT" [(visible)]="EmailEDIT" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Email -->
+          <div class="field">
+            <label for="Email" class="block TextColorGray">Email : </label>
+            <input id="Email" type="username" pInputText />
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="EmailEDIT=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end EDIT Email PopPup Dialog -->
+  </p-accordionTab>
+
+
+  <!-- section Description -->
+
+
+  <p-accordionTab header="Description">
+    Descriptions
+
+    <!-- start Button Plus -->
+    <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial [model]="TooltipDescription" className="speeddial-right" direction="up"></p-speedDial>
+      </div>
+    </div>
+    <!-- end Button Plus -->
+
+    <!-- start ADD Description PopPup Dialog -->
+    <p-dialog header="ADD" [(visible)]="DescriptionADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Description -->
+          <div class="field pt-3">
+            <label for="Description" class="block TextColorGray">Description of personal : </label>
+            <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="DescriptionADD=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end ADD Description PopPup Dialog -->
+    <!-- start EDIT Description PopPup Dialog -->
+    <p-dialog header="EDIT" [(visible)]="DescriptionEDIT" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Description -->
+          <div class="field pt-3">
+            <label for="Description" class="block TextColorGray">Description of personal : </label>
+            <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="DescriptionEDIT=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end EDIT Description PopPup Dialog -->
+  </p-accordionTab>
+</p-accordion>

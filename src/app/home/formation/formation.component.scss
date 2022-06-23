@@ -1,0 +1,12 @@
+
+:host ::ng-deep {
+  .speeddial-tooltip {
+    .p-speeddial-direction-up {
+      &.speeddial-right {
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+

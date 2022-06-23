@@ -1,0 +1,44 @@
+
+/*
+  Sign in
+*/
+.alignText{
+  text-align:center;
+}
+.TextColorGray{
+color:gray;
+}
+:host ::ng-deep .p-password input {
+width: 18rem
+}
+:host ::ng-deep .field input {
+width: 15rem
+}
+.titleConnection{
+padding-top: 3%;
+padding-bottom: 10%;
+font-size: 150%;
+color:#48dbfb;
+}
+
+
+/*
+  Sign up
+*/
+.colorSTEP{
+color:#1dd1a1;
+font-size: 120%;
+font-family:'Courier New', Courier, monospace ;
+}
+:host ::ng-deep .p-password input {
+width: 18rem
+}
+:host ::ng-deep .field input {
+width: 15rem
+}
+.titleRegister{
+padding-top: 3%;
+padding-bottom: 10%;
+font-size: 150%;
+color:#1dd1a1;
+}

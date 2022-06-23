@@ -1,0 +1,16 @@
+.bg_color2{
+  background-color: rgb(222, 221, 221);
+}
+.bg_color1{
+  background-color: rgb(208, 208, 208);
+}
+.padding{
+  float: center ;
+}
+.profil{
+  margin:25% 10% 10% 10%;
+  float: center ;
+}
+.padding_obj{
+  padding-top: 18%;
+}
