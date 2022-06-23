@@ -9,6 +9,16 @@ export class CompteComponent implements OnInit {
 
   constructor() { }
 
+  AccountADD: boolean = false;
+  AccountEDIT: boolean = false;
+
+  AccountADDfunction() {
+    this.AccountADD = true;
+  }
+  AccountEDITfunction(){
+    this.AccountEDIT = true;
+  }
+
   ngOnInit() {
   }
 

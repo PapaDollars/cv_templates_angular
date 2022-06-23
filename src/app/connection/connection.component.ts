@@ -14,8 +14,8 @@ export class ConnectionComponent implements OnInit {
 
 
   isLoginHome(){
-    this.isLogin = true;
     this.isSignin = false;
+    this.isLogin = true;
   }
 
   ngOnInit() {

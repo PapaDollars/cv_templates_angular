@@ -9,6 +9,16 @@ export class LeisureComponent implements OnInit {
 
   constructor() { }
 
+  LeisureADD: boolean = false;
+  LeisureEDIT: boolean = false;
+
+  LeisureADDfunction() {
+    this.LeisureADD = true;
+  }
+  LeisureEDITfunction(){
+    this.LeisureEDIT = true;
+  }
+
   ngOnInit() {
   }
 

@@ -1,8 +1,79 @@
 <h2 style="color:#12c5ed" >Languages</h2>
 
 
+
 <p-accordion>
   <p-accordionTab header="Languages">
-    Language
+
+    <ul>
+      <li>Francais<br>
+          Level : {{Level}}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i (click)="LanguageEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
+        <i class="pi pi-trash"></i>&nbsp;&nbsp;
+      </li>
+
+    </ul>
+
+    <!-- start Button Plus -->
+    <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial (click)="LanguageADDfunction()" className="speeddial-right" direction="up"></p-speedDial>
+      </div>
+    </div>
+    <!-- end Button Plus -->
+
+    <!-- start ADD Language PopPup Dialog -->
+    <p-dialog header="ADD" [(visible)]="LanguageADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Language -->
+          <div class="field">
+            <label for="Language" class="block TextColorGray"> Name Language : </label>
+            <input id="Language" type="username" pInputText />
+          </div>
+          <div class="field">
+            <label for="Language" class="block TextColorGray"> Level : {{Level}} </label>
+            <input id="Language" type="text" pInputText readonly/>
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="LanguageADD=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end ADD Language PopPup Dialog -->
+    <!-- start EDIT Language PopPup Dialog -->
+    <p-dialog header="EDIT" [(visible)]="LanguageEDIT" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Language -->
+          <div class="field">
+            <label for="Language" class="block TextColorGray"> Name Language : </label>
+            <input id="Language" type="username" pInputText />
+          </div>
+          <div class="field">
+            <label for="Language" class="block TextColorGray"> Level : {{Level}} </label>
+            <input id="Language" type="text" pInputText readonly/>
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="LanguageEDIT=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end EDIT Language PopPup Dialog -->
   </p-accordionTab>
 </p-accordion>

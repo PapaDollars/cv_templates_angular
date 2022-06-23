@@ -30,6 +30,8 @@ import { SidebarModule} from 'ng-sidebar';
 import {FieldsetModule} from 'primeng/fieldset';
 import {DialogModule} from 'primeng/dialog';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import {TimelineModule} from 'primeng/timeline';
+import {SliderModule} from 'primeng/slider';
 
 
 @NgModule({
@@ -65,7 +67,9 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     SpeedDialModule,
     FieldsetModule,
     DialogModule,
-    InputTextareaModule
+    InputTextareaModule,
+    TimelineModule,
+    SliderModule
 
   ],
   providers: [],

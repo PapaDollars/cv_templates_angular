@@ -9,6 +9,18 @@ export class CompetenceComponent implements OnInit {
 
   constructor() { }
 
+  Level : number = 20 ;
+
+  CompetenceADD: boolean = false;
+  CompetenceEDIT: boolean = false;
+
+  CompetenceADDfunction() {
+    this.CompetenceADD = true;
+  }
+  CompetenceEDITfunction(){
+    this.CompetenceEDIT = true;
+  }
+
   ngOnInit() {
   }
 

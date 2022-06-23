@@ -1,8 +1,63 @@
-<h2 style="color:#12c5ed" >Experiences</h2>
+<h2 style="color:#12c5ed">Experiences</h2>
 
 
 <p-accordion>
   <p-accordionTab header="Experiences">
-    experience
+
+    <div class="card">
+      <p-timeline [value]="events1">
+        <ng-template pTemplate="content" let-event>
+          <small class="p-text-primary">{{event.enterprise}}</small><br>
+          <small class="p-text-secondary">{{event.date}}</small><br><br>
+          <small class="p-text-secondary">{{event.details}}</small>
+        </ng-template>
+        <ng-template pTemplate="opposite" let-event>
+          {{event.title}}<br>
+          <i class="pi pi-trash"></i>&nbsp;&nbsp;
+        </ng-template>
+      </p-timeline>
+    </div>
+
+    <!-- start Button Plus -->
+    <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial (click)="ExperienceADDfunction()" className="speeddial-right" direction="up"></p-speedDial>
+      </div>
+    </div>
+    <!-- end Button Plus -->
+    <!-- start ADD Experience PopPup Dialog -->
+    <p-dialog header="ADD" [(visible)]="ExperienceADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Experience -->
+          <div class="field">
+            <label for="Experience" class="block TextColorGray">Title : </label>
+            <input id="Experience" type="username" pInputText />
+          </div>
+          <div class="field">
+            <label for="Experience" class="block TextColorGray">Enterprise : </label>
+            <input id="Experience" type="username" pInputText />
+          </div>
+          <div class="field">
+            <label for="Experience" class="block TextColorGray">Period : </label>
+            <input id="Experience" type="date" pInputText />
+          </div>
+          <div class="field pt-2">
+            <label for="Description" class="block TextColorGray">Details : </label>
+            <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="ExperienceADD=false">&nbsp;
+          Reset
+        </button>
+        <button pButton>Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end ADD Experience PopPup Dialog -->
   </p-accordionTab>
 </p-accordion>

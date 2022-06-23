@@ -1,8 +1,76 @@
-<h2 style="color:#12c5ed" >Comptes</h2>
+<h2 style="color:#12c5ed" >Account</h2>
+
 
 
 <p-accordion>
-  <p-accordionTab header="Comptes">
-    Compte
+  <p-accordionTab header="Accounts">
+
+    <div class="card">
+      <i (click)="AccountEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
+      <i class="pi pi-trash"></i>&nbsp;&nbsp;<br>
+      <span><strong>Name Account :</strong> GitHub</span><br>
+      <span><strong>Link : </strong> https://stackoverflow.com/leresistant </span>
+    </div>
+
+     <!-- start Button Plus -->
+     <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial (click)="AccountADDfunction()" className="speeddial-right" direction="up"></p-speedDial>
+      </div>
+    </div>
+    <!-- end Button Plus -->
+   <!-- start ADD Account PopPup Dialog -->
+   <p-dialog header="ADD" [(visible)]="AccountADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+   [draggable]="false" [resizable]="false">
+
+   <div class="grid">
+     <div class="col alignText">
+       <!-- Account -->
+       <div class="field">
+         <label for="Account" class="block TextColorGray">Name  Account : </label>
+         <input id="Account" type="username" pInputText />
+       </div>
+       <div class="field">
+        <label for="Account" class="block TextColorGray">Link : </label>
+        <input id="Account" type="username" pInputText />
+      </div>
+     </div>
+   </div>
+
+   <ng-template pTemplate="footer">
+     <button style="background-color: #ff3838;" pButton (click)="AccountADD=false">&nbsp;
+       Reset
+     </button>
+     <button pButton>Submit</button>
+   </ng-template>
+ </p-dialog>
+ <!-- end ADD Account PopPup Dialog -->
+  <!-- start EDIT Account PopPup Dialog -->
+  <p-dialog header="EDIT" [(visible)]="AccountEDIT" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+  [draggable]="false" [resizable]="false">
+
+  <div class="grid">
+    <div class="col alignText">
+      <!-- Account -->
+      <div class="field">
+        <label for="Account" class="block TextColorGray">Name  Account : </label>
+        <input id="Account" type="username" pInputText />
+      </div>
+      <div class="field">
+       <label for="Account" class="block TextColorGray">Link : </label>
+       <input id="Account" type="username" pInputText />
+     </div>
+    </div>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <button style="background-color: #ff3838;" pButton (click)="AccountEDIT=false">&nbsp;
+      Reset
+    </button>
+    <button pButton>Submit</button>
+  </ng-template>
+</p-dialog>
+<!-- end EDIT Account PopPup Dialog -->
   </p-accordionTab>
 </p-accordion>
+

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem, MessageService } from 'primeng/api';
+import { MenuItem, MessageService, PrimeIcons } from 'primeng/api';
 
 @Component({
   selector: 'app-formation',
@@ -8,55 +8,26 @@ import { MenuItem, MessageService } from 'primeng/api';
   providers: [MessageService]
 })
 export class FormationComponent implements OnInit {
+
   constructor(private messageService: MessageService) { }
 
+  events1: any[] = [];
 
-  leftTooltipItems!: MenuItem[];
+  FormationADD: boolean = false;
+
+  FormationADDfunction() {
+    this.FormationADD = true;
+  }
 
   ngOnInit() {
 
-    this.leftTooltipItems = [
-      {
-        tooltipOptions: {
-          tooltipLabel: "Edit",
-          tooltipPosition: "left",
-        },
-        icon: 'pi pi-pencil',
-        command: () => {
-          this.messageService.add({ severity: 'info', summary: 'Add', detail: 'Data Added' });
-        }
-      },
-      {
-        tooltipOptions: {
-          tooltipLabel: "Update",
-          tooltipPosition: "left",
-        },
-        icon: 'pi pi-refresh',
-        command: () => {
-          this.messageService.add({ severity: 'success', summary: 'Update', detail: 'Data Updated' });
-        }
-      },
-      {
-        tooltipOptions: {
-          tooltipLabel: "Delete",
-          tooltipPosition: "left",
-        },
-        icon: 'pi pi-trash',
-        command: () => {
-          this.messageService.add({ severity: 'error', summary: 'Delete', detail: 'Data Deleted' });
-        }
-      },
-      {
-        tooltipOptions: {
-          tooltipLabel: "Add",
-          tooltipPosition: "left",
-        },
-        icon: 'pi pi-plus',
-        command: () => {
-          this.messageService.add({ severity: 'error', summary: 'Delete', detail: 'Data Deleted' });
-        }
-      }
+    //TimeLine
+    this.events1 = [
+      { diploma: 'Diploma_1', date: '15/10/2020', school: 'College Moderne', icon: PrimeIcons.SHOPPING_CART, color: '#9C27B0' },
+      { diploma: 'Diploma_2', date: '15/10/2020', school: 'Lycee Bilingue', icon: PrimeIcons.COG, color: '#673AB7' },
     ];
+
+
 
   }
 

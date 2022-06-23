@@ -1,0 +1,18 @@
+//button plus
+:host ::ng-deep {
+  .speeddial-tooltip {
+    .p-speeddial-direction-up {
+      &.speeddial-right {
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.alignText{
+  text-align:center;
+}
+.TextColorGray{
+color:gray;
+}

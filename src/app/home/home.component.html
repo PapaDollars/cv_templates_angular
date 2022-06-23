@@ -29,7 +29,7 @@
             </a></li>
           <li><a routerLink="/compte" (click)="SidebarModule()">
             <i class="pi pi-user" style="font-size: 1rem"></i>&nbsp;&nbsp;
-              Comptes
+              Account
             </a></li>
           <li><a routerLink="/language" (click)="SidebarModule()">
             <i class="pi pi-flag" style="font-size: 1rem"></i>&nbsp;&nbsp;
@@ -53,7 +53,12 @@
           <li><a routerLink="/aboutUS" (click)="SidebarModule()">
             <i class="pi pi-question-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
               about us
-            </a></li>
+            </a></li><br><br>
+
+            <li><a (click)="SidebarModule()">
+              <i class="pi pi-sign-in" style="font-size: 1rem"></i>&nbsp;&nbsp;
+                Log Out
+              </a></li>
         </ul>
       </div>
     </div>
@@ -64,14 +69,14 @@
     <div class="grid">
       <div class="col menuBar">
 
-     <i class="pi pi-bars" style="font-size: 1.5rem" (click)="SidebarModule()"></i>
+     <i class="pi pi-bars" style="font-size: 1.5rem"
+     (click)="SidebarModule()"></i>
 
     </div>
     </div>
 
     <div>
       <router-outlet></router-outlet>
-
     </div>
 
   </div>

@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   opened = false;
-  
+
   SidebarModule() {
     this.opened = !this.opened;
   }

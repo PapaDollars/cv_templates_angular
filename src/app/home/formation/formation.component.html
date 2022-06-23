@@ -1,15 +1,59 @@
-<h2 style="color:#12c5ed" >Formations</h2>
+<h2 style="color:#12c5ed">Formations</h2>
 
 
 <p-accordion>
   <p-accordionTab header="Formations">
 
-    diplomes
-    
     <div class="card">
-      <div style="height: 130px; position: relative;" class="speeddial-tooltip">
-        <p-speedDial [model]="leftTooltipItems" className="speeddial-right" direction="up"></p-speedDial>
+      <p-timeline [value]="events1">
+        <ng-template pTemplate="content" let-event>
+          <small class="p-text-primary">{{event.school}}</small><br>
+          <small class="p-text-secondary">{{event.date}}</small>
+        </ng-template>
+        <ng-template pTemplate="opposite" let-event>
+          {{event.diploma}}<br>
+          <i class="pi pi-trash"></i>&nbsp;&nbsp;
+        </ng-template>
+      </p-timeline>
+    </div>
+
+     <!-- start Button Plus -->
+     <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial (click)="FormationADDfunction()" className="speeddial-right" direction="up"></p-speedDial>
       </div>
     </div>
+    <!-- end Button Plus -->
+   <!-- start ADD Formation PopPup Dialog -->
+   <p-dialog header="ADD" [(visible)]="FormationADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+   [draggable]="false" [resizable]="false">
+
+   <div class="grid">
+     <div class="col alignText">
+       <!-- Formation -->
+       <div class="field">
+         <label for="Formation" class="block TextColorGray">Diploma : </label>
+         <input id="Formation" type="username" pInputText />
+       </div>
+       <div class="field">
+        <label for="Formation" class="block TextColorGray">School : </label>
+        <input id="Formation" type="username" pInputText />
+      </div>
+      <div class="field">
+        <label for="Formation" class="block TextColorGray">Period : </label>
+        <input id="Formation" type="date" pInputText />
+      </div>
+     </div>
+   </div>
+
+   <ng-template pTemplate="footer">
+     <button style="background-color: #ff3838;" pButton (click)="FormationADD=false">&nbsp;
+       Reset
+     </button>
+     <button pButton>Submit</button>
+   </ng-template>
+ </p-dialog>
+ <!-- end ADD Formation PopPup Dialog -->
   </p-accordionTab>
 </p-accordion>
+

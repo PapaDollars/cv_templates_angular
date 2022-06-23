@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ConnectionComponent } from './connection/connection.component';
 import { AboutUSComponent } from './home/aboutUS/aboutUS.component';
 import { CompetenceComponent } from './home/competence/competence.component';
 import { CompteComponent } from './home/compte/compte.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
 {path: 'viewCV', component:ViewCVComponent},
 {path: 'templates', component:TemplatesComponent},
 {path: 'aboutUS', component:AboutUSComponent},
+{path: 'connection', component:ConnectionComponent},
 
 ];
 
