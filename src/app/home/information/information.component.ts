@@ -14,7 +14,6 @@ export class InformationComponent implements OnInit {
   constructor(private messageService: MessageService) { }
 
   // Start PopPup Dialog
-  InformationADD: boolean = false;
   InformationEDIT: boolean = false;
   OccupationADD: boolean = false;
   OccupationEDIT: boolean = false;
@@ -35,7 +34,7 @@ export class InformationComponent implements OnInit {
   OccupationADDfunction() {
     this.OccupationADD = true;
   }
-  OccupationEDITfunction(){
+  OccupationEDITfunction() {
     this.OccupationEDIT = true;
   }
 
@@ -69,17 +68,6 @@ export class InformationComponent implements OnInit {
         command: () => {
           this.messageService.add({ severity: 'info', summary: 'Add', detail: 'Data Added' });
           this.InformationEDIT = true;
-        }
-      },
-      {
-        tooltipOptions: {
-          tooltipLabel: "Add",
-          tooltipPosition: "left",
-        },
-        icon: 'pi pi-plus',
-        command: () => {
-          this.messageService.add({ severity: 'error', summary: 'Delete', detail: 'Data Deleted' });
-          this.InformationADD = true;
         }
       }
     ];

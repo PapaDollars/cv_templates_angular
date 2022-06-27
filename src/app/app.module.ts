@@ -32,6 +32,9 @@ import {DialogModule} from 'primeng/dialog';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {TimelineModule} from 'primeng/timeline';
 import {SliderModule} from 'primeng/slider';
+import {ImageModule} from 'primeng/image';
+import {FileUploadModule} from 'primeng/fileupload';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -69,8 +72,10 @@ import {SliderModule} from 'primeng/slider';
     DialogModule,
     InputTextareaModule,
     TimelineModule,
-    SliderModule
-
+    SliderModule,
+    ImageModule,
+    FileUploadModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

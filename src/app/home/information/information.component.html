@@ -6,7 +6,10 @@
 
 <p-accordion>
   <p-accordionTab header="Picture">
-    picture
+   <div>
+     <input type="file" id="inputFle">
+     <img src="./assets/images/template1.png"  width="150" height="140" id="Image" alt="">
+   </div>
   </p-accordionTab>
 
 
@@ -33,56 +36,6 @@
     </div>
     <!-- end Button Plus -->
 
-    <!-- start ADD Information PopPup Dialog -->
-    <p-dialog header="Add" [(visible)]="InformationADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
-      [draggable]="false" [resizable]="false">
-
-      <div class="grid">
-        <div class="col alignText">
-
-          <!-- firstName -->
-          <div class="field">
-            <label for="FirstName" class="block TextColorGray">First Name : </label>
-            <input id="FirstName" type="username" pInputText />
-          </div>
-
-          <!-- lastName -->
-          <div class="field">
-            <label for="lastName" class="block TextColorGray">Last Name : </label>
-            <input id="lastName" type="username" pInputText />
-          </div>
-
-          <!-- birth date -->
-          <div class="field">
-            <label for="birthDate" class="block TextColorGray">Birth Date : </label>
-            <input id="birthDate" type="date" pInputText />
-          </div>
-
-          <!-- birthplace -->
-          <div class="field">
-            <label for="birthPlace" class="block TextColorGray">Birth Place :
-            </label>
-            <input id="birthPlace" type="username" pInputText />
-          </div>
-
-          <!-- address -->
-          <div class="field">
-            <label for="address" class="block TextColorGray">Address (rue) :
-            </label>
-            <input id="address" type="mailto" pInputText />
-          </div>
-
-        </div>
-      </div>
-
-      <ng-template pTemplate="footer">
-        <button style="background-color: #ff3838;" pButton (click)="InformationADD=false">&nbsp;
-          Reset
-        </button>
-        <button pButton>Submit</button>
-      </ng-template>
-    </p-dialog>
-    <!-- end ADD Information PopPup Dialog -->
     <!-- start EDIT Information PopPup Dialog -->
     <p-dialog header="EDIT" [(visible)]="InformationEDIT" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
       [draggable]="false" [resizable]="false">
@@ -328,7 +281,7 @@
   <!-- section Description -->
 
 
-  <p-accordionTab header="Description"> 
+  <p-accordionTab header="Description">
     Descriptions
 
     <!-- start Button Plus -->
