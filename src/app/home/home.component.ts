@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public FireS : FirebaseService) { }
 
   opened = false;
 
@@ -20,4 +21,10 @@ export class HomeComponent implements OnInit {
 
 
   }
+  @Output()  isLogout = new EventEmitter<void>()
+  logout(){
+    //  localStorage.removeItem("user");
+    this.FireS.logout()
+    this.isLogout.emit()
+    }
 }

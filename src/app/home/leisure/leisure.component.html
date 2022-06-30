@@ -4,11 +4,11 @@
 <p-accordion>
   <p-accordionTab header="Leisures">
 
-    <ul>
-      <li>Sport : Football
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <i (click)="LeisureEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
-        <i class="pi pi-trash"></i>&nbsp;&nbsp;
+    <ul *ngFor="let loisirs of loisir">
+      <li>
+        {{loisirs.nom}}&nbsp;&nbsp;
+        <i (click)="LeisureEDITfunction(loisirs)" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+        <i (click)="Deleteloisir(loisirs)"class="pi pi-trash"></i>&nbsp;&nbsp;
       </li>
 
     </ul>
@@ -30,7 +30,7 @@
           <!-- Leisure -->
           <div class="field">
             <label for="Leisure" class="block TextColorGray">Leisure : </label>
-            <input id="Leisure" type="username" pInputText />
+            <input id="Leisure" #nom type="username" pInputText />
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
         <button style="background-color: #ff3838;" pButton (click)="LeisureADD=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="setloisir(nom.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Leisure PopPup Dialog -->
@@ -52,7 +52,7 @@
           <!-- Leisure -->
           <div class="field">
             <label for="Leisure" class="block TextColorGray">Leisure : </label>
-            <input id="Leisure" type="username" pInputText />
+            <input id="Leisure" value="{{noms}}" #nomss type="username" pInputText />
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@
         <button style="background-color: #ff3838;" pButton (click)="LeisureEDIT=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="updateloisir(nomss.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Leisure PopPup Dialog -->

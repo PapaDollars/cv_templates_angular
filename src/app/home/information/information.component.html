@@ -7,8 +7,8 @@
 <p-accordion>
   <p-accordionTab header="Picture">
    <div>
-     <input type="file" id="inputFle">
-     <img src="./assets/images/template1.png"  width="150" height="140" id="Image" alt="">
+     <input type="file" id="inputFle" (change)="updateImage($event) ">
+     <img [src]=info[0].photo   width="150" height="140" id="Image" alt="">
    </div>
   </p-accordionTab>
 
@@ -20,11 +20,11 @@
 
     <strong>
       <i>
-        <p>Name : </p>
-        <p>First Name : </p>
-        <p>Date of Birth : </p>
-        <p>Place of Birth : </p>
-        <p>Address (street) : </p>
+        <p>Name : {{info[0].prenom}}</p>
+        <p>First Name : {{info[0].nom}} </p>
+        <p>Date of Birth : {{info[0].dateNaissance}}</p>
+        <p>Place of Birth : {{info[0].site}} </p>
+        <p>Address (street) : Yaounde</p>
       </i>
     </strong>
 
@@ -46,33 +46,33 @@
           <!-- firstName -->
           <div class="field">
             <label for="FirstName" class="block TextColorGray">First Name : </label>
-            <input id="FirstName" type="username" pInputText />
+            <input id="FirstName" type="username" pInputText #prenom value="{{info[0].prenom}}"/>
           </div>
 
           <!-- lastName -->
           <div class="field">
             <label for="lastName" class="block TextColorGray">Last Name : </label>
-            <input id="lastName" type="username" pInputText />
+            <input id="lastName" type="username" pInputText #nom value="{{info[0].nom}}" />
           </div>
 
           <!-- birth date -->
           <div class="field">
             <label for="birthDate" class="block TextColorGray">Birth Date : </label>
-            <input id="birthDate" type="date" pInputText />
+            <input id="birthDate" type="date" pInputText #dateN value="{{info[0].dateNaissance}}" />
           </div>
 
           <!-- birthplace -->
           <div class="field">
             <label for="birthPlace" class="block TextColorGray">Birth Place :
             </label>
-            <input id="birthPlace" type="username" pInputText />
+            <input id="birthPlace" type="username" pInputText #LieuN value="{{info[0].site}}" />
           </div>
 
           <!-- address -->
           <div class="field">
             <label for="address" class="block TextColorGray">Address (rue) :
             </label>
-            <input id="address" type="mailto" pInputText />
+            <input id="address" type="mailto" pInputText value="Yaounde" />
           </div>
 
         </div>
@@ -82,7 +82,7 @@
         <button style="background-color: #ff3838;" pButton (click)="InformationEDIT=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button pButton (click)="updateinfo(prenom.value,nom.value,dateN.value,LieuN.value)">Submit </button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Information PopPup Dialog -->
@@ -156,9 +156,11 @@
 
 
   <p-accordionTab header="Contact">
-    <i (click)="ContactEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
-    <i class="pi pi-trash"></i>&nbsp;&nbsp;
-    Contact
+    <li *ngFor="let num of  conctacts">
+    {{num.contact}}&nbsp;&nbsp;
+    <i (click)="ContactEDITfunction(num)" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+    <i (click)="DeleteContact(num)" class="pi pi-trash"></i>&nbsp;&nbsp;
+  </li>
 
     <!-- start Button Plus -->
     <div class="card">
@@ -177,7 +179,7 @@
           <!-- Contact -->
           <div class="field">
             <label for="Contact" class="block TextColorGray">Contact : </label>
-            <input id="Contact" type="username" pInputText />
+            <input id="Contact" #contact type="username" pInputText />
           </div>
         </div>
       </div>
@@ -186,7 +188,7 @@
         <button style="background-color: #ff3838;" pButton (click)="ContactADD=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button pButton (click)="setcontact(contact.value)">Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Contact PopPup Dialog -->
@@ -199,7 +201,7 @@
           <!-- Contact -->
           <div class="field">
             <label for="Contact" class="block TextColorGray">Contact : </label>
-            <input id="Contact" type="username" pInputText />
+            <input id="Contact" #cont value="{{num}}" type="username" pInputText />
           </div>
         </div>
       </div>
@@ -208,7 +210,7 @@
         <button style="background-color: #ff3838;" pButton (click)="ContactEDIT=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="updatecontact(cont.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Occupation PopPup Dialog -->
@@ -219,8 +221,11 @@
 
 
   <p-accordionTab header="Email">
-    <i (click)="EmailEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
-    <i class="pi pi-trash"></i>&nbsp;&nbsp;
+    <li *ngFor="let mail of emails">
+      {{mail.email}}
+     <i (click)="EmailEDITfunction(mail)" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+     <i (click)="DeleteMail(mail)" class="pi pi-trash"></i>&nbsp;&nbsp;
+  </li>
     Email
 
     <!-- start Button Plus -->
@@ -240,7 +245,7 @@
           <!-- Email -->
           <div class="field">
             <label for="Email" class="block TextColorGray">Email : </label>
-            <input id="Email" type="username" pInputText />
+            <input id="Email" #email type="username" pInputText />
           </div>
         </div>
       </div>
@@ -249,7 +254,7 @@
         <button style="background-color: #ff3838;" pButton (click)="EmailADD=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="setmail(email.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Email PopPup Dialog -->
@@ -262,7 +267,7 @@
           <!-- Email -->
           <div class="field">
             <label for="Email" class="block TextColorGray">Email : </label>
-            <input id="Email" type="username" pInputText />
+            <input id="Email" value="{{mails}}" #emailset type="username" pInputText />
           </div>
         </div>
       </div>
@@ -271,7 +276,7 @@
         <button style="background-color: #ff3838;" pButton (click)="EmailEDIT=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="updatemail(emailset.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Email PopPup Dialog -->
@@ -282,7 +287,7 @@
 
 
   <p-accordionTab header="Description">
-    Descriptions
+    {{info[0].biographie}}
 
     <!-- start Button Plus -->
     <div class="card">
@@ -323,7 +328,7 @@
           <!-- Description -->
           <div class="field pt-3">
             <label for="Description" class="block TextColorGray">Description of personal : </label>
-            <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+            <textarea id="float-input" value="{{info[0].biographie}}" #biogr rows="5" cols="30" pInputTextarea></textarea>
           </div>
         </div>
       </div>
@@ -332,7 +337,7 @@
         <button style="background-color: #ff3838;" pButton (click)="DescriptionEDIT=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="updatedescription(biogr.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Description PopPup Dialog -->

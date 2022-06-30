@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/firebase.service';
 
 @Component({
   selector: 'app-compte',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompteComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cruds : FirebaseService) { }
 
   AccountADD: boolean = false;
   AccountEDIT: boolean = false;
@@ -15,11 +16,53 @@ export class CompteComponent implements OnInit {
   AccountADDfunction() {
     this.AccountADD = true;
   }
-  AccountEDITfunction(){
+  idcompte !: any;
+  titress !: any;
+  lienss !: any;
+  AccountEDITfunction(compte : any){
     this.AccountEDIT = true;
+    this.idcompte = compte.id;
+    this.titress = compte.titre;
+    this.lienss = compte.lien;
+  }
+   compte !: any[];
+  ngOnInit() {
+    this.cruds.get_compte().subscribe(data =>{
+      this.compte = data;
+      console.log(data);
+   })
   }
 
-  ngOnInit() {
+  setcompte(titre : string , lien : string)
+  {
+    let Record = {
+      'titre' : titre,
+      'lien' : lien,
+      'mail' : ''
+    }
+    this.cruds.create_Compte(Record).then(res =>{
+      console.log(res);
+      alert("Compte ajouter ");
+    }).catch(error =>{
+      console.log(error);
+    });
   }
+
+  DeleteCompte(compte : any)
+{
+  this.cruds.deletecompte(compte.id);
+}
+
+updatecompte(titre : string , lien : string)
+{
+  let Record = {
+    'id' : this.idcompte,
+    'titre' : titre,
+    'lien' : lien
+  }
+
+  this.cruds.updatecompte(Record)
+}
+
 
 }

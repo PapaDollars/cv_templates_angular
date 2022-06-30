@@ -17,6 +17,10 @@ import { LanguageComponent } from './home/language/language.component';
 import { LeisureComponent } from './home/leisure/leisure.component';
 import { ViewCVComponent } from './home/viewCV/viewCV.component';
 import { Template1Component } from './home/templates/template1/template1.component';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import {AccordionModule} from 'primeng/accordion';
 import {MenuModule} from 'primeng/menu';
@@ -35,7 +39,9 @@ import {SliderModule} from 'primeng/slider';
 import {ImageModule} from 'primeng/image';
 import {FileUploadModule} from 'primeng/fileupload';
 import {HttpClientModule} from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
+import { FirebaseService } from './firebase.service';
+import { NgModel } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -75,9 +81,13 @@ import {HttpClientModule} from '@angular/common/http';
     SliderModule,
     ImageModule,
     FileUploadModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFirestoreModule
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

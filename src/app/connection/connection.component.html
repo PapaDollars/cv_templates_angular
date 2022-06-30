@@ -1,10 +1,10 @@
 <div class="grid">
   <div class="col card">
-    <p-tabView   *ngIf="isSignin" >
+    <p-tabView  *ngIf="isConnection" >
 
       <!-- Sign in -->
 
-      <p-tabPanel header="Sign In">
+      <p-tabPanel header="Sign In"  >
         <div class="grid" style="background-color:#f1f2f6">
           <div class="col alignText">
 
@@ -16,18 +16,18 @@
             <!-- address -->
             <div class="field">
               <label for="address" class="block TextColorGray">Address Email : </label>
-              <input id="address" type="mailto" pInputText pTooltip="Enter your Address Email" tooltipPosition="top" />
+              <input id="address" type="mailto" pInputText pTooltip="Enter your Address Email" #emails tooltipPosition="top" />
             </div><br>
 
             <!-- password -->
             <div class="field">
               <label for="password" class="block TextColorGray">Password : </label>
-              <input id="password" type="password" pPassword />
+              <input id="password" type="password" #password pPassword />
             </div><br><br><br><br>
 
             <!-- button valid -->
             <button pButton type="button" label="Connect" class="p-button-primary"
-              style="border-color:#0abde3; background:#0abde3" (click)="isLoginHome()">
+              style="border-color:#0abde3; background:#0abde3" (click)="onssignedin(emails.value , password.value)">
             </button>
 
           </div>
@@ -36,7 +36,7 @@
 
       <!-- Sign up -->
 
-      <p-tabPanel header="Sign Up">
+      <p-tabPanel header="Sign Up" *ngIf="isRegister">
         <div class="grid" style="background-color:#f1f2f6">
           <div class="col">
 
@@ -52,13 +52,13 @@
               <!-- firstName -->
               <div class="field">
                 <label for="FirstName" class="block TextColorGray">First Name : </label>
-                <input id="FirstName" type="username" pInputText />
+                <input id="FirstName" type="username" #prenom pInputText />
               </div>
 
               <!-- lastName -->
               <div class="field">
                 <label for="lastName" class="block TextColorGray">Last Name : </label>
-                <input id="lastName" type="username" pInputText />
+                <input id="lastName" type="username" #nom pInputText />
               </div>
             </div><br><br><br><br>
 
@@ -70,21 +70,21 @@
               <!-- birth date -->
               <div class="field">
                 <label for="birthDate" class="block TextColorGray">Birth Date : </label>
-                <input id="birthDate" type="date" pInputText />
+                <input id="birthDate" type="date" #dateN pInputText />
               </div>
 
               <!-- birthplace -->
               <div class="field">
                 <label for="birthPlace" class="block TextColorGray">Birth Place :
                 </label>
-                <input id="birthPlace" type="username" pInputText />
+                <input id="birthPlace" type="username" #LiueN pInputText />
               </div>
 
               <!-- address -->
               <div class="field">
                 <label for="address" class="block TextColorGray">Address Email :
                 </label>
-                <input id="address" type="mailto" pInputText />
+                <input id="address" type="mailto"  pInputText #mail  />
               </div>
             </div><br><br><br><br>
 
@@ -96,19 +96,19 @@
               <!-- password -->
               <div class="field">
                 <label for="password" class="block TextColorGray">Password : </label>
-                <input id="password" type="password" pPassword />
+                <input id="password" type="password" pPassword  #pwd1>
               </div>
 
               <!-- confirm password -->
               <div class="field">
                 <label for="confirmPassword" class="block TextColorGray">Confirm Password :
                 </label><br>
-                <input id="confirmPassword" type="password" pPassword />
+                <input id="confirmPassword" type="password" pPassword  #pwd2>
               </div>
               <br><br><br><br>
 
               <!-- button valid -->
-              <button pButton type="button" label="Register" class="p-button-success"
+              <button (click)="sigmups(prenom.value,nom.value,dateN.value,LiueN.value,mail.value,pwd1.value,pwd2.value)" pButton type="button" label="Register" class="p-button-success"
                 style="border-color:#00b894; background:#00b894">
               </button>
 
@@ -123,4 +123,4 @@
 </div>
 
 
-<app-home *ngIf="isLogin"></app-home>
+<app-home *ngIf="isSignedIn" (isLogout)="handlelogout()"></app-home>

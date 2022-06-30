@@ -5,11 +5,11 @@
 <p-accordion>
   <p-accordionTab header="Accounts">
 
-    <div class="card">
-      <i (click)="AccountEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
-      <i class="pi pi-trash"></i>&nbsp;&nbsp;<br>
-      <span><strong>Name Account :</strong> GitHub</span><br>
-      <span><strong>Link : </strong> https://stackoverflow.com/leresistant </span>
+    <div class="card" *ngFor="let comptes of compte">
+      <i (click)="AccountEDITfunction(comptes)" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+      <i (click)="DeleteCompte(comptes)" class="pi pi-trash"></i>&nbsp;&nbsp;<br>
+      <span><strong>Name Account :</strong> {{comptes.titre}}</span><br>
+      <span><strong>Link : </strong> {{comptes.lien}} </span>
     </div>
 
      <!-- start Button Plus -->
@@ -28,11 +28,11 @@
        <!-- Account -->
        <div class="field">
          <label for="Account" class="block TextColorGray">Name  Account : </label>
-         <input id="Account" type="username" pInputText />
+         <input id="Account" #titre type="username" pInputText />
        </div>
        <div class="field">
         <label for="Account" class="block TextColorGray">Link : </label>
-        <input id="Account" type="username" pInputText />
+        <input id="Account" #lien type="username" pInputText />
       </div>
      </div>
    </div>
@@ -41,7 +41,7 @@
      <button style="background-color: #ff3838;" pButton (click)="AccountADD=false">&nbsp;
        Reset
      </button>
-     <button pButton>Submit</button>
+     <button (click)="setcompte(titre.value,lien.value)" pButton>Submit</button>
    </ng-template>
  </p-dialog>
  <!-- end ADD Account PopPup Dialog -->
@@ -54,11 +54,11 @@
       <!-- Account -->
       <div class="field">
         <label for="Account" class="block TextColorGray">Name  Account : </label>
-        <input id="Account" type="username" pInputText />
+        <input id="Account" value="{{titress}}" #title type="username" pInputText />
       </div>
       <div class="field">
        <label for="Account" class="block TextColorGray">Link : </label>
-       <input id="Account" type="username" pInputText />
+       <input id="Account" value="{{lienss}}" #link type="username" pInputText />
      </div>
     </div>
   </div>
@@ -67,7 +67,7 @@
     <button style="background-color: #ff3838;" pButton (click)="AccountEDIT=false">&nbsp;
       Reset
     </button>
-    <button pButton>Submit</button>
+    <button (click)="updatecompte(title.value, link.value)" pButton>Submit</button>
   </ng-template>
 </p-dialog>
 <!-- end EDIT Account PopPup Dialog -->

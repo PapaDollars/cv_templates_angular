@@ -6,11 +6,12 @@
   <p-accordionTab header="Languages">
 
     <ul>
-      <li>Francais<br>
-          Level : {{Level}}
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <i (click)="LanguageEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
-        <i class="pi pi-trash"></i>&nbsp;&nbsp;
+      <li *ngFor="let langues of langue"> 
+         {{langues.nom}}
+         {{langues.niveau}}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i (click)="LanguageEDITfunction(langues)" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+        <i (click)="DeleteLangue(langues)" class="pi pi-trash"></i>&nbsp;&nbsp;
       </li>
 
     </ul>
@@ -32,11 +33,11 @@
           <!-- Language -->
           <div class="field">
             <label for="Language" class="block TextColorGray"> Name Language : </label>
-            <input id="Language" type="username" pInputText />
+            <input id="Language" #noms type="username" pInputText />
           </div>
           <div class="field">
             <label for="Language" class="block TextColorGray"> Level : {{Level}} </label>
-            <input id="Language" type="text" pInputText readonly/>
+            <input id="Language" #level type="text" pInputText />
           </div>
         </div>
       </div>
@@ -45,7 +46,7 @@
         <button style="background-color: #ff3838;" pButton (click)="LanguageADD=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="setlangues(noms.value,level.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Language PopPup Dialog -->
@@ -58,11 +59,11 @@
           <!-- Language -->
           <div class="field">
             <label for="Language" class="block TextColorGray"> Name Language : </label>
-            <input id="Language" type="username" pInputText />
+            <input id="Language" #nam4 value="{{nom}}" type="username" pInputText />
           </div>
           <div class="field">
             <label for="Language" class="block TextColorGray"> Level : {{Level}} </label>
-            <input id="Language" type="text" pInputText readonly/>
+            <input id="Language" #niveau value="{{niveaus}}" type="text" pInputText readonly/>
           </div>
         </div>
       </div>
@@ -71,7 +72,7 @@
         <button style="background-color: #ff3838;" pButton (click)="LanguageEDIT=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="updatelangue(nam4.value, niveau.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Language PopPup Dialog -->
