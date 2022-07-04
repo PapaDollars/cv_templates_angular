@@ -43,7 +43,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { FirebaseService } from './firebase.service';
 import { NgModel } from '@angular/forms';
-import { RealizationComponent } from './home/realization/realization.component';
+import { NgxPrintModule } from 'ngx-print';
 
 
 @NgModule({
@@ -63,7 +63,6 @@ import { RealizationComponent } from './home/realization/realization.component';
       ViewCVComponent,
       Template1Component,
       CertificateComponent,
-      RealizationComponent
 
    ],
   imports: [
@@ -90,7 +89,8 @@ import { RealizationComponent } from './home/realization/realization.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    NgxPrintModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

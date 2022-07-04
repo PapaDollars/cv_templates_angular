@@ -13,6 +13,7 @@
         </ng-template>
         <ng-template pTemplate="opposite" let-event>
           {{event.diploma}}<br>
+          <i (click)="formationEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
           <i class="pi pi-trash"></i>&nbsp;&nbsp;
         </ng-template>
       </p-timeline>
@@ -68,6 +69,49 @@
    </ng-template>
  </p-dialog>
  <!-- end ADD Formation PopPup Dialog -->
+ <!-- start EDIT Formation PopPup Dialog -->
+ <p-dialog header="EDIT" [(visible)]="FormationEDIT" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+ [draggable]="false" [resizable]="false">
+
+ <div class="grid">
+   <div class="col alignText">
+     <!-- Formation -->
+     <div class="field">
+       <label for="Formation" class="block TextColorGray">Diploma : </label>
+       <input id="Formation" type="username" pInputText />
+     </div>
+     <div class="field">
+      <label for="Formation" class="block TextColorGray">School : </label>
+      <input id="Formation" type="username" pInputText />
+    </div>
+    <div class="field">
+      <label for="Formation" class="block TextColorGray">Period : </label>
+      <input id="Formation" type="date" pInputText />
+    </div>
+    <div class="field">
+      <label for="Certificate" class="block TextColorGray">Select Category : </label>
+      <select name="select" id="selectCatogory">
+        <option class="option" value=""></option>
+        <option class="option" value="">Web developer</option>
+        <option class="option" value="">Front-then developer</option>
+        <option class="option" value="">Back-end developer</option>
+        <option class="option" value="">Database manager</option>
+        <option class="option" value="">Mobile developer</option>
+        <option class="option" value="">Management controller</option>
+        <option class="option" value="">Others...</option>
+      </select>
+    </div>
+   </div>
+ </div>
+
+ <ng-template pTemplate="footer">
+   <button style="background-color: #ff3838;" pButton (click)="FormationEDIT=false">&nbsp;
+     Reset
+   </button>
+   <button pButton>Submit</button>
+ </ng-template>
+</p-dialog>
+<!-- end EDIT Formation PopPup Dialog -->
   </p-accordionTab>
 </p-accordion>
 

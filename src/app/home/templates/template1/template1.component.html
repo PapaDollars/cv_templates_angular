@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container-fluid aa" id="prints">
   <div class="row">
 <!-- left side -->
     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 bg_color2 ">
@@ -76,3 +76,9 @@
 
   </div>
 </div>
+<button [printStyle]="{
+  p:{'color':'green'},
+  h5:{'color':'red'},
+  div:{}
+}"
+  printSectionId="prints" ngxPrint>ok</button>

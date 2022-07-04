@@ -22,14 +22,14 @@ export class LeisureComponent implements OnInit {
   LeisureEDITfunction(loisirs : any){
     this.LeisureEDIT = true;
     this.idloise = loisirs.id;
-    
+
     this.noms = loisirs.nom;
     alert(this.noms)
     this.mail = loisirs.mail;
   }
   loisir !: any[];
   ngOnInit() {
-  
+
     this.cruds.get_loisirs().subscribe(data =>{
       this.loisir = data;
       console.log(data);
@@ -50,7 +50,7 @@ export class LeisureComponent implements OnInit {
       console.log(error);
     });
   }
-  
+
   Deleteloisir( loisir : any)
   {
     this.cruds.deleteLoisir(loisir.id);

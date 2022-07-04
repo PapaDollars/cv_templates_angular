@@ -13,9 +13,13 @@ export class ExperienceComponent implements OnInit {
   events1: any[] = [];
 
   ExperienceADD: boolean = false;
+  experienceEDIT : boolean = false;
 
   ExperienceADDfunction() {
     this.ExperienceADD = true;
+  }
+ experienceEDITfunction() {
+    this.experienceEDIT = true;
   }
 
   ngOnInit() {

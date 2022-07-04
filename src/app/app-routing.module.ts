@@ -10,7 +10,6 @@ import { FormationComponent } from './home/formation/formation.component';
 import { InformationComponent } from './home/information/information.component';
 import { LanguageComponent } from './home/language/language.component';
 import { LeisureComponent } from './home/leisure/leisure.component';
-import { RealizationComponent } from './home/realization/realization.component';
 import { TemplatesComponent } from './home/templates/templates.component';
 import { ViewCVComponent } from './home/viewCV/viewCV.component';
 
@@ -28,7 +27,6 @@ const routes: Routes = [
 {path: 'aboutUS', component:AboutUSComponent},
 {path: 'connection', component:ConnectionComponent},
 {path: 'certificate', component:CertificateComponent},
-{path: 'realization', component:RealizationComponent},
 
 ];
 

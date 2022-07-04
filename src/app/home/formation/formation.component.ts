@@ -14,9 +14,13 @@ export class FormationComponent implements OnInit {
   events1: any[] = [];
 
   FormationADD: boolean = false;
+  FormationEDIT : boolean =false;
 
   FormationADDfunction() {
     this.FormationADD = true;
+  }
+  formationEDITfunction() {
+    this.FormationEDIT = true;
   }
 
   ngOnInit() {
