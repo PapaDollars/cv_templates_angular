@@ -10,6 +10,7 @@ import { ConnectionComponent } from './connection/connection.component';
 import { FormationComponent } from './home/formation/formation.component';
 import { TemplatesComponent } from './home/templates/templates.component';
 import { AboutUSComponent } from './home/aboutUS/aboutUS.component';
+import { CertificateComponent } from './home/Certificate/Certificate.component';
 import { CompetenceComponent } from './home/competence/competence.component';
 import { CompteComponent } from './home/compte/compte.component';
 import { ExperienceComponent } from './home/experience/experience.component';
@@ -42,6 +43,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { FirebaseService } from './firebase.service';
 import { NgModel } from '@angular/forms';
+import { RealizationComponent } from './home/realization/realization.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +61,9 @@ import { NgModel } from '@angular/forms';
       LeisureComponent,
       TemplatesComponent,
       ViewCVComponent,
-      Template1Component
+      Template1Component,
+      CertificateComponent,
+      RealizationComponent
 
    ],
   imports: [

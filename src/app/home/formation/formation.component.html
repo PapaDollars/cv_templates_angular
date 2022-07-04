@@ -8,7 +8,8 @@
       <p-timeline [value]="events1">
         <ng-template pTemplate="content" let-event>
           <small class="p-text-primary">{{event.school}}</small><br>
-          <small class="p-text-secondary">{{event.date}}</small>
+          <small class="p-text-secondary">{{event.date}}</small><br>
+          <small class="p-text-secondary">Category</small>
         </ng-template>
         <ng-template pTemplate="opposite" let-event>
           {{event.diploma}}<br>
@@ -42,6 +43,19 @@
       <div class="field">
         <label for="Formation" class="block TextColorGray">Period : </label>
         <input id="Formation" type="date" pInputText />
+      </div>
+      <div class="field">
+        <label for="Certificate" class="block TextColorGray">Select Category : </label>
+        <select name="select" id="selectCatogory">
+          <option class="option" value=""></option>
+          <option class="option" value="">Web developer</option>
+          <option class="option" value="">Front-then developer</option>
+          <option class="option" value="">Back-end developer</option>
+          <option class="option" value="">Database manager</option>
+          <option class="option" value="">Mobile developer</option>
+          <option class="option" value="">Management controller</option>
+          <option class="option" value="">Others...</option>
+        </select>
       </div>
      </div>
    </div>

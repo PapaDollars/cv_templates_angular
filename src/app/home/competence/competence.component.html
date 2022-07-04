@@ -6,7 +6,8 @@
 
     <ul>
       <li>Example : Html <br>
-          Level : {{Level}}
+          Level : {{Level}}<br>
+          Category
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <i (click)="CompetenceEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
         <i class="pi pi-trash"></i>&nbsp;&nbsp;
@@ -37,6 +38,19 @@
             <label for="Competence" class="block TextColorGray"> Level : {{Level}} </label>
             <input id="Competence" type="text" pInputText readonly/>
           </div>
+          <div class="field">
+            <label for="Certificate" class="block TextColorGray">Select Category : </label>
+            <select name="select" id="selectCatogory">
+              <option class="option" value=""></option>
+              <option class="option" value="">Web developer</option>
+              <option class="option" value="">Front-then developer</option>
+              <option class="option" value="">Back-end developer</option>
+              <option class="option" value="">Database manager</option>
+              <option class="option" value="">Mobile developer</option>
+              <option class="option" value="">Management controller</option>
+              <option class="option" value="">Others...</option>
+            </select>
+          </div>
         </div>
       </div>
 
@@ -62,6 +76,19 @@
           <div class="field">
             <label for="Competence" class="block TextColorGray"> Level : {{Level}} </label>
             <input id="Competence" type="text" pInputText readonly/>
+          </div>
+          <div class="field">
+            <label for="Certificate" class="block TextColorGray">Select Category : </label>
+            <select name="select" id="selectCatogory">
+              <option class="option" value=""></option>
+              <option class="option" value="">Web developer</option>
+              <option class="option" value="">Front-then developer</option>
+              <option class="option" value="">Back-end developer</option>
+              <option class="option" value="">Database manager</option>
+              <option class="option" value="">Mobile developer</option>
+              <option class="option" value="">Management controller</option>
+              <option class="option" value="">Others...</option>
+            </select>
           </div>
         </div>
       </div>

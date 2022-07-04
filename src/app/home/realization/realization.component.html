@@ -1,0 +1,56 @@
+<h2 style="color:#12c5ed">Realization</h2>
+
+
+<p-accordion>
+  <p-accordionTab header="Realizations">
+
+    <div class="card">
+
+     Details : <br>
+     Category :
+    </div>
+
+    <!-- start Button Plus -->
+    <div class="card">
+      <div style="height: 90px; position: relative;" class="speeddial-tooltip">
+        <p-speedDial (click)="RealizationADDfunction()" className="speeddial-right" direction="up"></p-speedDial>
+      </div>
+    </div>
+    <!-- end Button Plus -->
+    <!-- start ADD Realization PopPup Dialog -->
+    <p-dialog header="ADD" [(visible)]="RealizationADD" [modal]="true" [style]="{width: '100vw'}" [maximizable]="true"
+      [draggable]="false" [resizable]="false">
+
+      <div class="grid">
+        <div class="col alignText">
+          <!-- Realization -->
+          <div class="field pt-2">
+            <label for="Description" class="block TextColorGray">Details : </label>
+            <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+          </div>
+          <div class="field">
+            <label for="Realization" class="block TextColorGray">Select Category : </label>
+            <select name="select" id="selectCatogory">
+              <option class="option" value=""></option>
+              <option class="option" value="">Web developer</option>
+              <option class="option" value="">Front-then developer</option>
+              <option class="option" value="">Back-end developer</option>
+              <option class="option" value="">Database manager</option>
+              <option class="option" value="">Mobile developer</option>
+              <option class="option" value="">Management controller</option>
+              <option class="option" value="">Others...</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button style="background-color: #ff3838;" pButton (click)="RealizationADD=false">&nbsp;
+          Reset
+        </button>
+        <button pButton (click)="RealizationADD=false">Submit</button>
+      </ng-template>
+    </p-dialog>
+    <!-- end ADD Realization PopPup Dialog -->
+  </p-accordionTab>
+</p-accordion>
