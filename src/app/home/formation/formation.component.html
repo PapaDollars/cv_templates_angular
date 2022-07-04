@@ -1,4 +1,4 @@
-<h2 style="color:#12c5ed">Formations</h2>
+      <h2 style="color:#12c5ed">Formations</h2>
 
 
 <p-accordion>
@@ -34,27 +34,27 @@
        <!-- Formation -->
        <div class="field">
          <label for="Formation" class="block TextColorGray">Diploma : </label>
-         <input id="Formation" type="username" pInputText />
+         <input id="Formation" #diplome type="username" pInputText />
        </div>
        <div class="field">
         <label for="Formation" class="block TextColorGray">School : </label>
-        <input id="Formation" type="username" pInputText />
+        <input id="Formation" #ecole  type="username" pInputText />
       </div>
       <div class="field">
         <label for="Formation" class="block TextColorGray">Period : </label>
-        <input id="Formation" type="date" pInputText />
+        <input id="Formation" #period type="date" pInputText />
       </div>
       <div class="field">
         <label for="Certificate" class="block TextColorGray">Select Category : </label>
-        <select name="select" id="selectCatogory">
-          <option class="option" value=""></option>
-          <option class="option" value="">Web developer</option>
-          <option class="option" value="">Front-then developer</option>
-          <option class="option" value="">Back-end developer</option>
-          <option class="option" value="">Database manager</option>
-          <option class="option" value="">Mobile developer</option>
-          <option class="option" value="">Management controller</option>
-          <option class="option" value="">Others...</option>
+        <select name="select" #catego id="selectCatogory">
+          <option class="option" #catego value=""></option>
+          <option class="option" #catego value="">Web developer</option>
+          <option class="option" #catego value="">Front-then developer</option>
+          <option class="option" #catego value="">Back-end developer</option>
+          <option class="option" #catego value="">Database manager</option>
+          <option class="option" #catego value="">Mobile developer</option>
+          <option class="option" #catego value="">Management controller</option>
+          <option class="option" #catego value="">Others...</option>
         </select>
       </div>
      </div>
@@ -64,7 +64,7 @@
      <button style="background-color: #ff3838;" pButton (click)="FormationADD=false">&nbsp;
        Reset
      </button>
-     <button pButton>Submit</button>
+     <button (click)="setformation(diplome.value,ecole.value,period.value,catego.value)" pButton>Submit</button>
    </ng-template>
  </p-dialog>
  <!-- end ADD Formation PopPup Dialog -->
