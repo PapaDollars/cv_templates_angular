@@ -51,12 +51,12 @@ export class FirebaseService {
       return this.firestoreservice.collection('information').add(information);
     }
 
-    create_Diplome(Reccord : any)
+    create_formation(Reccord : any)
     {
       let mail = <string><unknown>localStorage.getItem('user');
       let mails = JSON.parse(mail);
       Reccord['mail'] = mails.email;
-      return this.firestoreservice.collection('diplome').add(Reccord);
+      return this.firestoreservice.collection('formation').add(Reccord);
     }
 
     create_user(Reccord : any)
@@ -199,12 +199,12 @@ export class FirebaseService {
     //     })
     //   }))
     // }
-    get_diplome()
+    get_formation()
     {
       let mail = <string><unknown>localStorage.getItem('user');
       let mails = JSON.parse(mail);
       mails = mails.email;
-      return this.firestoreservice.collection('diplome',ref =>ref.where('mail','==',mails)).snapshotChanges().pipe(map(chamges =>{
+      return this.firestoreservice.collection('formation',ref =>ref.where('mail','==',mails)).snapshotChanges().pipe(map(chamges =>{
         return chamges.map(a =>{
           const data = a.payload.doc.data() as Item;
           data.id = a.payload.doc.id;
@@ -332,10 +332,26 @@ export class FirebaseService {
       alert("compte Supprimer !"+compte)
     }
 
+    deleteformation(formation : Item)
+    {
+      this.Itemdoc = this.firestoreservice.doc('formation/'+formation);
+      this.Itemdoc.delete();
+      alert("formation supprimer Supprimer !"+formation);
+    }
+
+
+
     updatecontact(conctacts : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('contact/'+conctacts.id);
       this.Itemdoc.update(conctacts);
+      alert('ajour !')
+    }
+
+    updateFormation(formation : Item)
+    {
+      this.Itemdoc = this.firestoreservice.doc('formation/'+formation.id);
+      this.Itemdoc.update(formation);
       alert('ajour !')
     }
 
@@ -391,5 +407,7 @@ export class FirebaseService {
       this.Itemdoc = this.firestoreservice.doc('information/'+Record.id);
       this.Itemdoc.update(Record);
     }
+
+    
 
 } 
