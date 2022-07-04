@@ -4,17 +4,17 @@
 <p-accordion>
   <p-accordionTab header="Formations">
 
-    <div class="card">
-      <p-timeline [value]="events1">
+    <div class="card" >
+      <p-timeline [value]="formation">
         <ng-template pTemplate="content" let-event>
-          <small class="p-text-primary">{{event.school}}</small><br>
-          <small class="p-text-secondary">{{event.date}}</small><br>
-          <small class="p-text-secondary">Category</small>
+          <small class="p-text-primary">{{event.ecole}}</small><br>
+          <small class="p-text-secondary">{{event.periode}}</small><br>
+          <small class="p-text-secondary">{{event.categorie}}</small>
         </ng-template>
         <ng-template pTemplate="opposite" let-event>
-          {{event.diploma}}<br>
-          <i (click)="formationEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="pi pi-trash"></i>&nbsp;&nbsp;
+          {{event.diplome}}<br>
+          <i (click)="formationEDITfunction(event)" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+          <i (click)="DeleteFormation(event.id)" class="pi pi-trash"></i>&nbsp;&nbsp;
         </ng-template>
       </p-timeline>
     </div>
@@ -78,19 +78,19 @@
      <!-- Formation -->
      <div class="field">
        <label for="Formation" class="block TextColorGray">Diploma : </label>
-       <input id="Formation" type="username" pInputText />
+       <input id="Formation" value="{{diplomes}}" #diplomess type="username" pInputText />
      </div>
      <div class="field">
       <label for="Formation" class="block TextColorGray">School : </label>
-      <input id="Formation" type="username" pInputText />
+      <input id="Formation" value="{{ecoles}}" #ecoless type="username" pInputText />
     </div>
     <div class="field">
       <label for="Formation" class="block TextColorGray">Period : </label>
-      <input id="Formation" type="date" pInputText />
+      <input id="Formation" value="{{periods}}" #periodess type="date" pInputText />
     </div>
     <div class="field">
       <label for="Certificate" class="block TextColorGray">Select Category : </label>
-      <select name="select" id="selectCatogory">
+      <select name="select" value="{{categories}}" #categoriess id="selectCatogory">
         <option class="option" value=""></option>
         <option class="option" value="">Web developer</option>
         <option class="option" value="">Front-then developer</option>
@@ -108,7 +108,7 @@
    <button style="background-color: #ff3838;" pButton (click)="FormationEDIT=false">&nbsp;
      Reset
    </button>
-   <button pButton>Submit</button>
+   <button (click)=" updateFormation(diplomess.value,ecoless.value,periodess.value,categoriess.value)" pButton>Submit</button>
  </ng-template>
 </p-dialog>
 <!-- end EDIT Formation PopPup Dialog -->

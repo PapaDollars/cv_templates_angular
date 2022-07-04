@@ -126,8 +126,30 @@ export class FirebaseService {
       return this.firestoreservice.collection('compte').add(Record);
     }
 
+    create_certification( Record : any)
+    {
+      let mail = <string><unknown>localStorage.getItem('user');
+      let mails = JSON.parse(mail);
+      Record['mail'] = mails.email;
+      return this.firestoreservice.collection('certification').add(Record);
+    }
+
 
    
+    get_certification()
+    {
+      let mail = <string><unknown>localStorage.getItem('user');
+      let mails = JSON.parse(mail);
+      mails = mails.email;
+      return this.firestoreservice.collection('certification',ref =>ref.where('mail','==',mails)).snapshotChanges().pipe(map(chamges =>{
+        return chamges.map(a =>{
+          const data = a.payload.doc.data() as Item;
+          data.id = a.payload.doc.id;
+          return data;
+        })
+      }))
+    } 
+
     get_compte()
     {
       let mail = <string><unknown>localStorage.getItem('user');
@@ -287,6 +309,12 @@ export class FirebaseService {
       this.Itemdoc.delete();
     }
 
+    deletecertification(certification : Item)
+    {
+      this.Itemdoc = this.firestoreservice.doc("certification/"+certification);
+      this.Itemdoc.delete();
+    }
+
     deleteexperience(experience : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('experience/'+ experience);
@@ -315,91 +343,110 @@ export class FirebaseService {
     {
       this.Itemdoc = this.firestoreservice.doc('contact/'+conctacts);
       this.Itemdoc.delete();
-      alert("Contact Supprimer !"+conctacts)
+      console.log("Contact Supprimer !"+conctacts)
     }
 
     deleteAddresseMail(mail : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('email/'+mail);
       this.Itemdoc.delete();
-      alert("email Supprimer !"+mail)
+      console.log("email Supprimer !"+mail)
     }
 
     deletecompte(compte : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('compte/'+compte);
       this.Itemdoc.delete();
-      alert("compte Supprimer !"+compte)
+      console.log("compte Supprimer !"+compte)
     }
 
     deleteformation(formation : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('formation/'+formation);
       this.Itemdoc.delete();
-      alert("formation supprimer Supprimer !"+formation);
+      console.log("formation Supprimer !"+formation);
     }
 
+    updateCompetence(competence : Item)
+    {
+      this.Itemdoc = this.firestoreservice.doc('competence/'+competence.id);
+      this.Itemdoc.update(competence);
+      console.log('ajour');
+    }
+
+    updateExperience(experience : Item)
+    {
+      this.Itemdoc = this.firestoreservice.doc('experience/'+experience.id);
+      this.Itemdoc.update(experience);
+      console.log('ajour');
+    }
 
 
     updatecontact(conctacts : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('contact/'+conctacts.id);
       this.Itemdoc.update(conctacts);
-      alert('ajour !')
+      console.log('ajour !')
+    }
+ 
+    updatecertifcatiom( certification : Item)
+    {
+      this.Itemdoc = this.firestoreservice.doc("certification/"+certification.id);
+      this.Itemdoc.update(certification);
     }
 
     updateFormation(formation : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('formation/'+formation.id);
       this.Itemdoc.update(formation);
-      alert('ajour !')
+      console.log('ajour !')
     }
 
     updatecompte(compte : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('compte/'+compte.id);
       this.Itemdoc.update(compte);
-      alert('ajour !')
+      console.log('ajour !')
     }
 
     updateLangue(langue : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('langue/'+langue.id);
       this.Itemdoc.update(langue);
-      alert('ajour !')
+      console.log('ajour !')
     }
 
     updateAddresseMail(mail : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('email/'+mail.id);
       this.Itemdoc.update(mail);
-      alert('ajour !')
+      console.log('ajour !')
     }
 
 
     updateinfo(info : Item){
       this.Itemdoc = this.firestoreservice.doc('user/'+info.id);
       this.Itemdoc.update(info);
-      alert('ajour !')
+      console.log('ajour !')
     }
 
     updateBio(bioo : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('user/'+bioo.id);
       this.Itemdoc.update(bioo);
-      alert('ajour !')
+      console.log('ajour !')
     }
     updateloisir(loisir : Item)
     {
       this.Itemdoc = this.firestoreservice.doc('loisirs/'+loisir.id);
       this.Itemdoc.update(loisir);
-      alert('ajour !')
+      console.log('ajour !')
     }
 
     updatedelete(info : Item){
       this.Itemdoc = this.firestoreservice.doc('contact/'+info.id);
       this.Itemdoc.update(info);
-      alert('Conctact ajour !')
+      console.log('Conctact ajour !')
     }
 
     updateDwnloadUrl(Record : Item)
