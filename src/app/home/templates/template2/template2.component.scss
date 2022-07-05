@@ -1,0 +1,741 @@
+:root {
+	--web-view-ids: template_1;
+	--web-view-name: template_1;
+	--web-view-id: template_1;
+	--web-scale-to-fit: false;
+	--web-scale-to-fit-type: default;
+	--web-enable-scale-up: false;
+	--web-scale-on-resize: true;
+	--web-show-scale-controls: false;
+	--web-scale-on-double-click: false;
+	--web-center-horizontally: false;
+	--web-center-vertically: false;
+	--web-actual-size-on-double-click: false;
+	--web-navigate-on-keypress: false;
+	--web-refresh-for-changes: false;
+	--web-add-image-compare: false;
+	--web-show-by-media-query: true;
+	--web-application: false;
+	--web-show-navigation-controls: false;
+	--web-enable-deep-linking: true;
+	--web-is-overlay: false;
+}
+#template_1 {
+	display: none;
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: template_1;
+		--web-view-id: template_1;
+		--web-scale-on-resize: true;
+		--web-show-by-media-query: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#template_1 {
+		position: absolute;
+		display: block;
+		width: 798px;
+		height: 1052px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: template_1;
+		--web-view-id: template_1;
+		--web-scale-on-resize: true;
+		--web-show-by-media-query: true;
+		--web-enable-deep-linking: true;
+	}
+	#template_1_g {
+		position: absolute;
+		width: 798px;
+		height: 1010.56px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#div {
+		position: absolute;
+		width: 798px;
+		height: 182px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#section {
+		opacity: 0.42;
+		position: absolute;
+		width: 798px;
+		height: 182px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#section_j {
+		fill: rgba(231,231,233,1);
+		stroke: rgba(144,0,255,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.section_j {
+		position: absolute;
+		overflow: visible;
+		width: 798px;
+		height: 182px;
+		left: 0px;
+		top: 0px;
+	}
+	#title {
+		left: 539px;
+		top: 84px;
+		position: absolute;
+		overflow: visible;
+		width: 131px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 30px;
+		color: rgba(112,112,112,1);
+	}
+	#list2 {
+		position: absolute;
+		width: 84px;
+		height: 17px;
+		left: 106px;
+		top: 465px;
+		overflow: visible;
+	}
+	#numero {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 85px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 13px;
+		color: rgba(112,112,112,1);
+	}
+	#div_n {
+		position: absolute;
+		width: 334px;
+		height: 975.56px;
+		left: 44px;
+		top: 35px;
+		overflow: visible;
+	}
+	#section_o {
+		fill: rgba(232,233,231,1);
+	}
+	.section_o {
+		mix-blend-mode: darken;
+		filter: drop-shadow(15px 15px 6px rgba(0, 0, 0, 0.149));
+		overflow: visible;
+		position: absolute;
+		width: 358px;
+		height: 999.56px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#img {
+		position: absolute;
+		width: 182px;
+		height: 182px;
+		left: 68px;
+		top: 34px;
+		overflow: visible;
+	}
+	#Contact {
+		left: 66px;
+		top: 391px;
+		position: absolute;
+		overflow: visible;
+		width: 79px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	#Mail {
+		left: 64px;
+		top: 489px;
+		position: absolute;
+		overflow: visible;
+		width: 47px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	#Social {
+		left: 64px;
+		top: 594px;
+		position: absolute;
+		overflow: visible;
+		width: 159px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	#line {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.line {
+		overflow: visible;
+		position: absolute;
+		width: 239.004px;
+		height: 2px;
+		left: 59px;
+		top: 469.82px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#line_u {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.line_u {
+		overflow: visible;
+		position: absolute;
+		width: 239.513px;
+		height: 4px;
+		left: 62px;
+		top: 575px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#list2_v {
+		position: absolute;
+		width: 112px;
+		height: 17px;
+		left: 63px;
+		top: 531px;
+		overflow: visible;
+	}
+	#email {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 113px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 13px;
+		color: rgba(112,112,112,1);
+	}
+	#prenom {
+		left: 68px;
+		top: 267px;
+		position: absolute;
+		overflow: visible;
+		width: 43px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 13px;
+		color: rgba(112,112,112,1);
+	}
+	#nom {
+		left: 68px;
+		top: 240px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#dateN {
+		left: 66px;
+		top: 318px;
+		position: absolute;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#LieuN {
+		left: 68px;
+		top: 291px;
+		position: absolute;
+		overflow: visible;
+		width: 111px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#adress {
+		left: 66px;
+		top: 345px;
+		position: absolute;
+		overflow: visible;
+		width: 87px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#line_ {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.line_ {
+		overflow: visible;
+		position: absolute;
+		width: 242.012px;
+		height: 4px;
+		left: 59px;
+		top: 703px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#line_ba {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.line_ba {
+		overflow: visible;
+		position: absolute;
+		width: 242.012px;
+		height: 4px;
+		left: 56px;
+		top: 810px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#langue {
+		left: 59px;
+		top: 725px;
+		position: absolute;
+		overflow: visible;
+		width: 81px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	#list3 {
+		position: absolute;
+		width: 47px;
+		height: 20px;
+		left: 59px;
+		top: 760px;
+		overflow: visible;
+	}
+	#langues {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 48px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#loisir {
+		left: 58px;
+		top: 831px;
+		position: absolute;
+		overflow: visible;
+		width: 67px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	#list4 {
+		position: absolute;
+		width: 50px;
+		height: 20px;
+		left: 59px;
+		top: 865px;
+		overflow: visible;
+	}
+	#loisirs {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 51px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#list1 {
+		position: absolute;
+		width: 122px;
+		height: 43px;
+		left: 105px;
+		top: 666px;
+		overflow: visible;
+	}
+	#GitHub {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 85px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 13px;
+		color: rgba(112,112,112,1);
+	}
+	#StackOverflow {
+		left: 0px;
+		top: 26px;
+		position: absolute;
+		overflow: visible;
+		width: 123px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 13px;
+		color: rgba(112,112,112,1);
+	}
+	#div_bd {
+		position: absolute;
+		width: 280px;
+		height: 65px;
+		left: 444px;
+		top: 539px;
+		overflow: visible;
+	}
+	#h1 {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 137px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	#div_bf {
+		position: absolute;
+		width: 279px;
+		height: 23px;
+		left: 1px;
+		top: 42px;
+		overflow: visible;
+	}
+	#level {
+		left: 235px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#Nom_de_la_competence {
+		left: 0px;
+		top: 3px;
+		position: absolute;
+		overflow: visible;
+		width: 164px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#div_bi {
+		position: absolute;
+		width: 274px;
+		height: 102px;
+		left: 444px;
+		top: 349px;
+		overflow: visible;
+	}
+	#h1_bj {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 125px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	#div_bk {
+		position: absolute;
+		width: 274px;
+		height: 54px;
+		left: 0px;
+		top: 48px;
+		overflow: visible;
+	}
+	#form {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#periode {
+		left: 226px;
+		top: 4px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#Etablissement {
+		left: 2px;
+		top: 34px;
+		position: absolute;
+		overflow: visible;
+		width: 87px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#div_bo {
+		position: absolute;
+		width: 290px;
+		height: 118px;
+		left: 443px;
+		top: 717px;
+		overflow: visible;
+	}
+	#h1_bp {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 123px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	#exp {
+		left: 0px;
+		top: 38px;
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#periode_br {
+		left: 242px;
+		top: 38px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#name_entreprise {
+		left: 0px;
+		top: 66px;
+		position: absolute;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#Text-area {
+		left: 0px;
+		top: 98px;
+		position: absolute;
+		overflow: visible;
+		width: 134px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#pays {
+		left: 261px;
+		top: 66px;
+		position: absolute;
+		overflow: visible;
+		width: 29px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#div_bv {
+		position: absolute;
+		width: 226px;
+		height: 80px;
+		left: 444px;
+		top: 214px;
+		overflow: visible;
+	}
+	#Text-Area {
+		position: absolute;
+		width: 225px;
+		height: 40px;
+		left: 1px;
+		top: 40px;
+		overflow: visible;
+	}
+	#TextArea {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 226px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 15px;
+		color: rgba(112,112,112,1);
+	}
+	#DESCRIPTION {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 131px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+}
