@@ -4,13 +4,14 @@
 <p-accordion>
   <p-accordionTab header="Competences">
 
-    <ul>
-      <li>Example : Html <br>
-          Level : {{Level}}<br>
-          Category
+    <ul *ngFor="let compt of competemce">
+      <li>
+          Titre : {{compt.titre}}<br>
+          Level : {{compt.niveau}}<br>
+          Category : {{compt.categorie}}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <i (click)="CompetenceEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;
-        <i class="pi pi-trash"></i>&nbsp;&nbsp;
+        <i (click)="CompetenceEDITfunction(compt)" class="pi pi-pencil"></i>&nbsp;&nbsp;
+        <i (click)="DeleteCompetence(compt.id)" class="pi pi-trash"></i>&nbsp;&nbsp;
       </li>
 
     </ul>
@@ -32,15 +33,15 @@
           <!-- Competence -->
           <div class="field">
             <label for="Competence" class="block TextColorGray"> Name Competence : </label>
-            <input id="Competence" type="username" pInputText />
+            <input id="Competence" #titre type="username" pInputText />
           </div>
           <div class="field">
             <label for="Competence" class="block TextColorGray"> Level : {{Level}} </label>
-            <input id="Competence" type="text" pInputText readonly/>
+            <input id="Competence" #niveau type="text" pInputText />
           </div>
           <div class="field">
             <label for="Certificate" class="block TextColorGray">Select Category : </label>
-            <select name="select" id="selectCatogory">
+            <select name="select"  #catego id="selectCatogory">
               <option class="option" value=""></option>
               <option class="option" value="">Web developer</option>
               <option class="option" value="">Front-then developer</option>
@@ -58,7 +59,7 @@
         <button style="background-color: #ff3838;" pButton (click)="CompetenceADD=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="setcompetence(titre.value,niveau.value,catego.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Competence PopPup Dialog -->
@@ -71,15 +72,15 @@
           <!-- Competence -->
           <div class="field">
             <label for="Competence" class="block TextColorGray"> Name Competence : </label>
-            <input id="Competence" type="username" pInputText />
+            <input id="Competence" value="{{titre_ }}" type="username" #titres pInputText />
           </div>
           <div class="field">
             <label for="Competence" class="block TextColorGray"> Level : {{Level}} </label>
-            <input id="Competence" type="text" pInputText readonly/>
+            <input id="Competence" value="{{niveau_}}" type="text" #niveaus pInputText readonly/>
           </div>
           <div class="field">
             <label for="Certificate" class="block TextColorGray">Select Category : </label>
-            <select name="select" id="selectCatogory">
+            <select name="select" value="{{cat_}}" #cats id="selectCatogory">
               <option class="option" value=""></option>
               <option class="option" value="">Web developer</option>
               <option class="option" value="">Front-then developer</option>
@@ -97,7 +98,7 @@
         <button style="background-color: #ff3838;" pButton (click)="CompetenceEDIT=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)=" updateCompetence(titres.value,niveaus.value,cats.value)"  pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Competence PopPup Dialog -->

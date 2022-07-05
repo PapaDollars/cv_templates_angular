@@ -17,14 +17,25 @@ export class FormationComponent implements OnInit {
 
   FormationADD: boolean = false;
   FormationEDIT : boolean =false;
-
+  idformations !: any;
+  ecoles !: any;
+  diplomes !: any;
+  periods !: any;
+  categories !: any;
   FormationADDfunction() {
     this.FormationADD = true;
-  }
-  formationEDITfunction() {
-    this.FormationEDIT = true;
-  }
 
+  }
+  formationEDITfunction(event : any) {
+    this.FormationEDIT = true;
+    alert(event.ecole)
+    this.idformations = event.id;
+    this.ecoles = <string><any>event.ecole;
+    this.diplomes = event.diplome;
+    this.periods = event.periode;
+    this.categories = event.categorie;
+  }
+  formation !: any[];
   ngOnInit() {
 
     //TimeLine
@@ -32,20 +43,20 @@ export class FormationComponent implements OnInit {
       { diploma: 'Diploma_1', date: '15/10/2020', school: 'College Moderne', icon: PrimeIcons.SHOPPING_CART, color: '#9C27B0' },
       { diploma: 'Diploma_2', date: '15/10/2020', school: 'Lycee Bilingue', icon: PrimeIcons.COG, color: '#673AB7' },
     ];
-
-    // this.cruds.get_user().subscribe(data  =>{
-    //   // console.log(data[0].mail);
-    //   this.info =data;
-    //   console.log(data) ;
-    // })
+     
+    this.crud.get_formation().subscribe(data  =>{
+      // console.log(data[0].mail);
+      this.formation =data;
+      console.log(data) ;
+    })
 
   }
 
   setformation(diplome : string, ecole : string , period : string , catego : string)
   {
-
+   
     let Record = {
-
+      
       'diplome':diplome,
       'ecole':ecole,
       'periode':period,
@@ -62,8 +73,17 @@ export class FormationComponent implements OnInit {
   }
 
   updateFormation(diplome : string, ecole : string , period : string , catego : string)
-  {
+  { 
+    let Record = {
+      'id': this.idformations,
+      'diplome' : diplome,
+      'ecole' : ecole,
+      'periode' : period,
+      'categorie' : catego
+    }
 
+    this.crud.updateFormation(Record);
+     
   }
 
   DeleteFormation(Record : any)

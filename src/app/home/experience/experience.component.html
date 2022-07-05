@@ -5,17 +5,18 @@
   <p-accordionTab header="Experiences">
 
     <div class="card">
-      <p-timeline [value]="events1">
+      <p-timeline [value]="experience">
         <ng-template pTemplate="content" let-event>
-          <small class="p-text-primary">{{event.enterprise}}</small><br>
-          <small class="p-text-secondary">{{event.date}}</small><br>
-          <small class="p-text-secondary">Category</small><br><br>
-          <small class="p-text-secondary">{{event.details}}</small>
+          <small class="p-text-primary">{{event.entreprise}}</small><br>
+          <small class="p-text-secondary">{{event.periode}}</small><br>
+          <small class="p-text-secondary">{{event.categorie}}</small><br><br>
+          <small class="p-text-secondary"></small>
         </ng-template>
         <ng-template pTemplate="opposite" let-event>
-          {{event.title}}<br>
-          <i (click)="experienceEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="pi pi-trash"></i>&nbsp;&nbsp;
+          {{event.poste}}<br>{{event.detail}}
+          <br>
+          <i (click)="experienceEDITfunction(event)" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+          <i (click)="DeleteExperience(event.id)"  class="pi pi-trash"></i>&nbsp;&nbsp;
         </ng-template>
       </p-timeline>
     </div>
@@ -35,24 +36,28 @@
         <div class="col alignText">
           <!-- Experience -->
           <div class="field">
-            <label for="Experience" class="block TextColorGray">Title : </label>
-            <input id="Experience" type="username" pInputText />
+            <label for="Experience" class="block TextColorGray">Poste : </label>
+            <input id="Experience" type="username" #poste pInputText />
           </div>
           <div class="field">
             <label for="Experience" class="block TextColorGray">Enterprise : </label>
-            <input id="Experience" type="username" pInputText />
+            <input id="Experience" type="username" #enterprise pInputText />
           </div>
           <div class="field">
             <label for="Experience" class="block TextColorGray">Period : </label>
-            <input id="Experience" type="date" pInputText />
+            <input id="Experience" type="date" #periode pInputText />
           </div>
           <div class="field pt-2">
             <label for="Description" class="block TextColorGray">Details : </label>
-            <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+            <textarea id="float-input" rows="5" cols="30" #details pInputTextarea></textarea>
+          </div>
+          <div class="field pt-2">
+            <label for="Description" class="block TextColorGray">Pay : </label>
+            <input id="float-input" #pays  pInputText />
           </div>
           <div class="field">
             <label for="Certificate" class="block TextColorGray">Select Category : </label>
-            <select name="select" id="selectCatogory">
+            <select name="select" #catego id="selectCatogory">
               <option class="option" value=""></option>
               <option class="option" value="">Web developer</option>
               <option class="option" value="">Front-then developer</option>
@@ -70,7 +75,7 @@
         <button style="background-color: #ff3838;" pButton (click)="ExperienceADD=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="setexperience(poste.value,enterprise.value,periode.value,details.value,pays.value,catego.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Experience PopPup Dialog -->
@@ -82,24 +87,28 @@
         <div class="col alignText">
           <!-- Experience -->
           <div class="field">
-            <label for="Experience" class="block TextColorGray">Title : </label>
-            <input id="Experience" type="username" pInputText />
+            <label for="Experience" class="block TextColorGray">Poste : </label>
+            <input id="Experience"  value="{{post}}" #postt type="username" pInputText />
           </div>
           <div class="field">
             <label for="Experience" class="block TextColorGray">Enterprise : </label>
-            <input id="Experience" type="username" pInputText />
+            <input id="Experience" value="{{entrepris}}" #enterprisee type="username" pInputText />
           </div>
           <div class="field">
             <label for="Experience" class="block TextColorGray">Period : </label>
-            <input id="Experience" type="date" pInputText />
+            <input id="Experience" value="{{period}}" #periodd type="date" pInputText />
           </div>
           <div class="field pt-2">
             <label for="Description" class="block TextColorGray">Details : </label>
-            <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+            <textarea id="float-input" value="{{detail}}" #detaill rows="5" cols="30" pInputTextarea></textarea>
+          </div>
+          <div class="field pt-2">
+            <label for="Description" class="block TextColorGray">Pay : </label>
+            <input id="float-input" value="{{pay}}" #payy  pInputText />
           </div>
           <div class="field">
             <label for="Certificate" class="block TextColorGray">Select Category : </label>
-            <select name="select" id="selectCatogory">
+            <select name="select" value="{{cat}}" #catt  id="selectCatogory">
               <option class="option" value=""></option>
               <option class="option" value="">Web developer</option>
               <option class="option" value="">Front-then developer</option>
@@ -117,7 +126,7 @@
         <button style="background-color: #ff3838;" pButton (click)="experienceEDIT=false">&nbsp;
           Reset
         </button>
-        <button pButton>Submit</button>
+        <button (click)="updateExperience(postt.value,enterprisee.value,periodd.value,detaill.value,payy.value,catt.value)" pButton>Submit</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Experience PopPup Dialog -->

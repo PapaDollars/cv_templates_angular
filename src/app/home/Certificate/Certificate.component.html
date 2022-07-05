@@ -5,12 +5,12 @@
 <p-accordion>
   <p-accordionTab header="Certificate">
 
-    <div class="card">
-      <i (click)="CertificateEDITfunction()" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-      <i  class="pi pi-trash"></i>&nbsp;&nbsp;<br>
-      <span><strong>Title Certificate :</strong> </span><br>
-      <span><strong>Organization : </strong> </span><br>
-      <span><strong>Category : </strong> </span>
+    <div class="card" *ngFor="let cert of certifcation">
+      <i (click)="CertificateEDITfunction(cert)" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+      <i (click)=" DeleteCert(cert.id)" class="pi pi-trash"></i>&nbsp;&nbsp;<br>
+      <span><strong>Title Certificate : {{cert.titre}}</strong> </span><br>
+      <span><strong>Organization : {{cert.organisme}} </strong> </span><br>
+      <span><strong>Category : {{cert.categorie}} </strong> </span>
     </div>
 
      <!-- start Button Plus -->
@@ -37,7 +37,7 @@
       </div>
       <div class="field">
         <label for="Certificate" class="block TextColorGray">Select Category : </label>
-        <select name="select" id="selectCatogory">
+        <select name="select" #catego id="selectCatogory">
           <option class="option" value=""></option>
           <option class="option" value="">Web developer</option>
           <option class="option" value="">Front-then developer</option>
@@ -55,7 +55,7 @@
      <button style="background-color: #ff3838;" pButton (click)="CertificateADD=false">&nbsp;
        Reset
      </button>
-     <button pButton (click)="CertificateADD=false">Submit</button>
+     <button pButton (click)="setcert(titre.value,lien.value,catego.value)">Submit</button>
    </ng-template>
  </p-dialog>
  <!-- end ADD Certificate PopPup Dialog -->
@@ -68,15 +68,15 @@
       <!-- Certificate -->
       <div class="field">
         <label for="Certificate" class="block TextColorGray">Title  Certificate : </label>
-        <input id="Certificate" value="" #title type="username" pInputText />
+        <input id="Certificate" value="{{titres}}" #title type="username" pInputText />
       </div>
       <div class="field">
        <label for="Certificate" class="block TextColorGray">Organization : </label>
-       <input id="Certificate" value="" #link type="username" pInputText />
+       <input id="Certificate" value="{{organismes}}" #link type="username" pInputText />
      </div>
      <div class="field">
       <label for="Certificate" class="block TextColorGray">Select Category : </label>
-      <select name="select" id="selectCatogory">
+      <select name="select" value="{{catego}}" #cat id="selectCatogory">
         <option class="option" value=""></option>
         <option class="option" value="">Web developer</option>
         <option class="option" value="">Front-then developer</option>
@@ -94,7 +94,7 @@
     <button style="background-color: #ff3838;" pButton (click)="CertificateEDIT=false">&nbsp;
       Reset
     </button>
-    <button pButton>Submit</button>
+    <button (click)="updatecerticate(title.value,link.value,cat.value)" pButton>Submit</button>
   </ng-template>
 </p-dialog>
 <!-- end EDIT Certificate PopPup Dialog -->
