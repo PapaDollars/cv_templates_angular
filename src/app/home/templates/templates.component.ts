@@ -19,7 +19,7 @@ export class TemplatesComponent implements OnInit {
     if (getDisplay.classList != null) {
       getDisplay.style.display = "block";
 
-      let pdf = new jsPDF('p', 'pt', 'a4');
+      let pdf = new jsPDF('p', 'pt', 'a3');
       pdf.html(this.element1.nativeElement, {
         callback: (pdf) => {
           pdf.save("generateCV_Template_1.pdf");
