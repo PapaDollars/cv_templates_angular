@@ -15,14 +15,14 @@ import { ViewCVComponent } from './home/viewCV/viewCV.component';
 
 const routes: Routes = [
 
-{path: '', component:InformationComponent},
+{path: 'information', component:InformationComponent},
 {path: 'competence', component:CompetenceComponent},
 {path: 'compte', component:CompteComponent},
 {path: 'experience', component:ExperienceComponent},
 {path: 'formation', component:FormationComponent},
 {path: 'language', component:LanguageComponent},
 {path: 'leisure', component:LeisureComponent},
-{path: 'viewCV', component:ViewCVComponent},
+{path: '', component:ViewCVComponent},
 {path: 'templates', component:TemplatesComponent},
 {path: 'aboutUS', component:AboutUSComponent},
 {path: 'connection', component:ConnectionComponent},

@@ -1,31 +1,53 @@
-<h2 style="color:#12c5ed" >Downloads</h2>
+<h2 style="color:#12c5ed" >{{'download' | translate}}</h2>
 
 
 <div class="grid">
   <div class="col">
     <!-- Template 1 -->
-    <p-image src="./assets/images/template1.png" alt="Image" class="img"
-     [preview]="true" width="200" height="250"></p-image><br><br>
-
+    <p-image src="./assets/images/template1.png"   alt="Image" class="img"
+     width="200" height="250"></p-image><br><br>
     <!-- Template 2 -->
-     <p-image src="./assets/images/template1.png" alt="Image" class="img"
-     [preview]="true" width="200" height="250"></p-image>
+     <p-image src="./assets/images/template1.png" (click)="Template2_PDF()" alt="Image" class="img"
+     width="200" height="250"></p-image>
   </div>
   <div class="col">
     <!-- Template 3 -->
     <p-image src="./assets/images/template1.png" alt="Image" class="img"
      [preview]="true" width="200" height="250"></p-image><br><br>
     <!-- Template 4 -->
-     <p-image src="./assets/images/template1.png" alt="Image" class="img"
+     <p-image src="./assets/images/template1.png"  alt="Image" class="img"
      [preview]="true" width="200" height="250"></p-image>
   </div>
   <div class="col">
     <!-- Template 5 -->
-    <p-image src="./assets/images/template1.png" alt="Image" class="img"
+    <p-image src="./assets/images/template1.png"  alt="Image" class="img"
      [preview]="true" width="200" height="250"></p-image><br><br>
     <!-- Template 6 -->
-     <p-image src="./assets/images/template1.png" alt="Image" class="img"
+     <p-image src="./assets/images/template1.png"  alt="Image" class="img"
      [preview]="true" width="200" height="250"></p-image>
   </div>
 </div>
 
+<div id="template1" #content1>
+  <app-template1></app-template1>
+</div>
+
+<div id="template2" #content2>
+  <app-template2></app-template2>
+</div>
+
+<!-- <div id="template3" #content3>
+  <app-template3></app-template3>
+</div>
+
+<div id="template4" #content4>
+  <app-template4></app-template1>
+</div>
+
+<div id="template5" #content5>
+  <app-template5></app-template1>
+</div>
+
+<div id="template6" #content6>
+  <app-template6></app-template6>
+</div> -->

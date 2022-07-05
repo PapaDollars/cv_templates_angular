@@ -20,11 +20,11 @@
 
     <strong>
       <i>
-        <p>Name : {{info[0].prenom}}</p>
-        <p>First Name : {{info[0].nom}} </p>
-        <p>Date of Birth : {{info[0].dateNaissance}}</p>
-        <p>Place of Birth : {{info[0].site}} </p>
-        <p>Address (street) : Yaounde</p>
+        <p>{{'firstName' | translate}} : {{info[0].prenom}}</p>
+        <p>{{'lastName' | translate}} : {{info[0].nom}} </p>
+        <p>{{'birthDate' | translate}} : {{info[0].dateNaissance}}</p>
+        <p>{{'birthPlace' | translate}} : {{info[0].site}} </p>
+        <p>{{'AddressStreet' | translate}} : Yaounde</p>
       </i>
     </strong>
 
@@ -45,32 +45,32 @@
 
           <!-- firstName -->
           <div class="field">
-            <label for="FirstName" class="block TextColorGray">First Name : </label>
+            <label for="FirstName" class="block TextColorGray">{{'firstName' | translate}} : </label>
             <input id="FirstName" type="username" pInputText #prenom value="{{info[0].prenom}}"/>
           </div>
 
           <!-- lastName -->
           <div class="field">
-            <label for="lastName" class="block TextColorGray">Last Name : </label>
+            <label for="lastName" class="block TextColorGray">{{'lastName' | translate}} : </label>
             <input id="lastName" type="username" pInputText #nom value="{{info[0].nom}}" />
           </div>
 
           <!-- birth date -->
           <div class="field">
-            <label for="birthDate" class="block TextColorGray">Birth Date : </label>
+            <label for="birthDate" class="block TextColorGray">{{'birthDate' | translate}} : </label>
             <input id="birthDate" type="date" pInputText #dateN value="{{info[0].dateNaissance}}" />
           </div>
 
           <!-- birthplace -->
           <div class="field">
-            <label for="birthPlace" class="block TextColorGray">Birth Place :
+            <label for="birthPlace" class="block TextColorGray">{{'birthPlace' | translate}} :
             </label>
             <input id="birthPlace" type="username" pInputText #LieuN value="{{info[0].site}}" />
           </div>
 
           <!-- address -->
           <div class="field">
-            <label for="address" class="block TextColorGray">Address (rue) :
+            <label for="address" class="block TextColorGray">{{'AddressStreet' | translate}} :
             </label>
             <input id="address" type="mailto" pInputText value="Yaounde" />
           </div>
@@ -80,9 +80,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="InformationEDIT=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button pButton (click)="updateinfo(prenom.value,nom.value,dateN.value,LieuN.value)">Submit </button>
+        <button pButton (click)="updateinfo(prenom.value,nom.value,dateN.value,LieuN.value)">{{'submit' | translate}} </button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Information PopPup Dialog -->
@@ -121,9 +121,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="OccupationADD=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button pButton>Submit</button>
+        <button pButton>{{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Occupation PopPup Dialog -->
@@ -143,9 +143,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="OccupationEDIT=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button pButton>Submit</button>
+        <button pButton>{{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Occupation PopPup Dialog -->
@@ -186,9 +186,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="ContactADD=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button pButton (click)="setcontact(contact.value)">Submit</button>
+        <button pButton (click)="setcontact(contact.value)">{{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Contact PopPup Dialog -->
@@ -208,9 +208,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="ContactEDIT=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)="updatecontact(cont.value)" pButton>Submit</button>
+        <button (click)="updatecontact(cont.value)" pButton>{{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Occupation PopPup Dialog -->
@@ -252,9 +252,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="EmailADD=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)="setmail(email.value)" pButton>Submit</button>
+        <button (click)="setmail(email.value)" pButton>{{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Email PopPup Dialog -->
@@ -274,9 +274,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="EmailEDIT=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)="updatemail(emailset.value)" pButton>Submit</button>
+        <button (click)="updatemail(emailset.value)" pButton>{{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Email PopPup Dialog -->
@@ -305,7 +305,7 @@
         <div class="col alignText">
           <!-- Description -->
           <div class="field pt-3">
-            <label for="Description" class="block TextColorGray">Description of personal : </label>
+            <label for="Description" class="block TextColorGray">{{'descriptionPersonal' | translate}} : </label>
             <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
           </div>
         </div>
@@ -313,9 +313,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="DescriptionADD=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button pButton>Submit</button>
+        <button pButton>{{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Description PopPup Dialog -->
@@ -327,7 +327,7 @@
         <div class="col alignText">
           <!-- Description -->
           <div class="field pt-3">
-            <label for="Description" class="block TextColorGray">Description of personal : </label>
+            <label for="Description" class="block TextColorGray">{{'descriptionPersonal' | translate}} : </label>
             <textarea id="float-input" value="{{info[0].biographie}}" #biogr rows="5" cols="30" pInputTextarea></textarea>
           </div>
         </div>
@@ -335,9 +335,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="DescriptionEDIT=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)="updatedescription(biogr.value)" pButton>Submit</button>
+        <button (click)="updatedescription(biogr.value)" pButton>{{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Description PopPup Dialog -->

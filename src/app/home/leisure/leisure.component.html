@@ -1,4 +1,4 @@
-<h2 style="color:#12c5ed" >Leisures</h2>
+<h2 style="color:#12c5ed" > {{'leisure' | translate}}</h2>
 
 
 <p-accordion>
@@ -29,7 +29,7 @@
         <div class="col alignText">
           <!-- Leisure -->
           <div class="field">
-            <label for="Leisure" class="block TextColorGray">Leisure : </label>
+            <label for="Leisure" class="block TextColorGray"> {{'leisure' | translate}} : </label>
             <input id="Leisure" #nom type="username" pInputText />
           </div>
         </div>
@@ -37,9 +37,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="LeisureADD=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)="setloisir(nom.value)" pButton>Submit</button>
+        <button (click)="setloisir(nom.value)" pButton> {{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Leisure PopPup Dialog -->
@@ -51,7 +51,7 @@
         <div class="col alignText">
           <!-- Leisure -->
           <div class="field">
-            <label for="Leisure" class="block TextColorGray">Leisure : </label>
+            <label for="Leisure" class="block TextColorGray"> {{'leisure' | translate}} : </label>
             <input id="Leisure" value="{{noms}}" #nomss type="username" pInputText />
           </div>
         </div>
@@ -59,9 +59,9 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="LeisureEDIT=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)="updateloisir(nomss.value)" pButton>Submit</button>
+        <button (click)="updateloisir(nomss.value)" pButton> {{'submit' | translate}}</button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Leisure PopPup Dialog -->

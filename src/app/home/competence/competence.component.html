@@ -6,9 +6,9 @@
 
     <ul *ngFor="let compt of competemce">
       <li>
-          Titre : {{compt.titre}}<br>
-          Level : {{compt.niveau}}<br>
-          Category : {{compt.categorie}}
+        {{'firstName' | translate}} : {{compt.titre}}<br>
+        {{'level' | translate}} : {{compt.niveau}}<br>
+          {{'categoryAff' | translate}} : {{compt.categorie}}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <i (click)="CompetenceEDITfunction(compt)" class="pi pi-pencil"></i>&nbsp;&nbsp;
         <i (click)="DeleteCompetence(compt.id)" class="pi pi-trash"></i>&nbsp;&nbsp;
@@ -32,24 +32,24 @@
         <div class="col alignText">
           <!-- Competence -->
           <div class="field">
-            <label for="Competence" class="block TextColorGray"> Name Competence : </label>
+            <label for="Competence" class="block TextColorGray"> {{'nameCompetence' | translate}} : </label>
             <input id="Competence" #titre type="username" pInputText />
           </div>
           <div class="field">
-            <label for="Competence" class="block TextColorGray"> Level : {{Level}} </label>
+            <label for="Competence" class="block TextColorGray"> {{'level' | translate}} : </label>
             <input id="Competence" #niveau type="text" pInputText />
           </div>
           <div class="field">
-            <label for="Certificate" class="block TextColorGray">Select Category : </label>
-            <select name="select"  [(ngModel)]="categorie1" id="selectCatogory">
-              <option class="option" ></option>
-              <option class="option" >Web developer</option>
-              <option class="option" >Front-then developer</option>
-              <option class="option" >Back-end developer</option>
-              <option class="option">Database manager</option>
-              <option class="option" >Mobile developer</option>
-              <option class="option" >Management controller</option>
-              <option class="option" >Others...</option>
+            <label for="Certificate" class="block TextColorGray">{{'selectCategory' | translate}} : </label>
+            <select name="select"  #catego id="selectCatogory">
+              <option class="option" value=""></option>
+              <option class="option"  value="">{{'webDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'frontEndDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'backEndDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'databaseManager' | translate}}</option>
+              <option class="option"  value="">{{'mobileDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'managementController' | translate}}</option>
+              <option class="option"  value="">{{'others_' | translate}}</option>
             </select>
           </div>
         </div>
@@ -57,9 +57,11 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="CompetenceADD=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)="setcompetence(titre.value,niveau.value)" pButton>Submit</button>
+        <button (click)="setcompetence(titre.value,niveau.value,catego.value)" pButton>
+          {{'submit' | translate}}
+        </button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Competence PopPup Dialog -->
@@ -71,24 +73,24 @@
         <div class="col alignText">
           <!-- Competence -->
           <div class="field">
-            <label for="Competence" class="block TextColorGray"> Name Competence : </label>
+            <label for="Competence" class="block TextColorGray">  {{'nameCompetence' | translate}}: </label>
             <input id="Competence" value="{{titre_ }}" type="username" #titres pInputText />
           </div>
           <div class="field">
-            <label for="Competence" class="block TextColorGray"> Level : {{Level}} </label>
+            <label for="Competence" class="block TextColorGray"> {{'level' | translate}} : </label>
             <input id="Competence" value="{{niveau_}}" type="text" #niveaus pInputText readonly/>
           </div>
           <div class="field">
-            <label for="Certificate" class="block TextColorGray">Select Category : </label>
+            <label for="Certificate" class="block TextColorGray">{{'selectCategory' | translate}} : </label>
             <select name="select" value="{{cat_}}" #cats id="selectCatogory">
-              <option class="option" ></option>
-              <option class="option" >Web developer</option>
-              <option class="option" >Front-then developer</option>
-              <option class="option">Back-end developer</option>
-              <option class="option">Database manager</option>
-              <option class="option" >Mobile developer</option>
-              <option class="option" >Management controller</option>
-              <option class="option" >Others...</option>
+              <option class="option" value=""></option>
+              <option class="option"  value="">{{'webDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'frontEndDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'backEndDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'databaseManager' | translate}}</option>
+              <option class="option"  value="">{{'mobileDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'managementController' | translate}}</option>
+              <option class="option"  value="">{{'others_' | translate}}</option>
             </select>
           </div>
         </div>
@@ -96,9 +98,11 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="CompetenceEDIT=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)=" updateCompetence(titres.value,niveaus.value,cats.value)"  pButton>Submit</button>
+        <button (click)=" updateCompetence(titres.value,niveaus.value,cats.value)"  pButton>
+          {{'submit' | translate}}
+        </button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Competence PopPup Dialog -->

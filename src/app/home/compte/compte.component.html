@@ -1,4 +1,4 @@
-<h2 style="color:#12c5ed" >Account</h2>
+<h2 style="color:#12c5ed" > {{'account' | translate}}</h2>
 
 
 
@@ -8,8 +8,8 @@
     <div class="card" *ngFor="let comptes of compte">
       <i (click)="AccountEDITfunction(comptes)" class="pi pi-pencil"></i>&nbsp;&nbsp;&nbsp;&nbsp;
       <i (click)="DeleteCompte(comptes)" class="pi pi-trash"></i>&nbsp;&nbsp;<br>
-      <span><strong>Name Account :</strong> {{comptes.titre}}</span><br>
-      <span><strong>Link : </strong> {{comptes.lien}} </span>
+      <span><strong> {{'nameAccount' | translate}} :</strong> {{comptes.titre}}</span><br>
+      <span><strong> {{'link' | translate}} : </strong> {{comptes.lien}} </span>
     </div>
 
      <!-- start Button Plus -->
@@ -27,11 +27,11 @@
      <div class="col alignText">
        <!-- Account -->
        <div class="field">
-         <label for="Account" class="block TextColorGray">Name  Account : </label>
+         <label for="Account" class="block TextColorGray">{{'nameAccount' | translate}} : </label>
          <input id="Account" #titre type="username" pInputText />
        </div>
        <div class="field">
-        <label for="Account" class="block TextColorGray">Link : </label>
+        <label for="Account" class="block TextColorGray">{{'link' | translate}} : </label>
         <input id="Account" #lien type="username" pInputText />
       </div>
      </div>
@@ -39,9 +39,9 @@
 
    <ng-template pTemplate="footer">
      <button style="background-color: #ff3838;" pButton (click)="AccountADD=false">&nbsp;
-       Reset
+      {{'reset' | translate}}
      </button>
-     <button (click)="setcompte(titre.value,lien.value)" pButton>Submit</button>
+     <button (click)="setcompte(titre.value,lien.value)" pButton> {{'submit' | translate}}</button>
    </ng-template>
  </p-dialog>
  <!-- end ADD Account PopPup Dialog -->
@@ -53,11 +53,11 @@
     <div class="col alignText">
       <!-- Account -->
       <div class="field">
-        <label for="Account" class="block TextColorGray">Name  Account : </label>
+        <label for="Account" class="block TextColorGray">{{'nameAccount' | translate}} : </label>
         <input id="Account" value="{{titress}}" #title type="username" pInputText />
       </div>
       <div class="field">
-       <label for="Account" class="block TextColorGray">Link : </label>
+       <label for="Account" class="block TextColorGray">{{'link' | translate}} : </label>
        <input id="Account" value="{{lienss}}" #link type="username" pInputText />
      </div>
     </div>
@@ -65,9 +65,11 @@
 
   <ng-template pTemplate="footer">
     <button style="background-color: #ff3838;" pButton (click)="AccountEDIT=false">&nbsp;
-      Reset
+      {{'reset' | translate}}
     </button>
-    <button (click)="updatecompte(title.value, link.value)" pButton>Submit</button>
+    <button (click)="updatecompte(title.value, link.value)" pButton>
+      {{'submit' | translate}}
+    </button>
   </ng-template>
 </p-dialog>
 <!-- end EDIT Account PopPup Dialog -->

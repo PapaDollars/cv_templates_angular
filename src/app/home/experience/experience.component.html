@@ -36,36 +36,36 @@
         <div class="col alignText">
           <!-- Experience -->
           <div class="field">
-            <label for="Experience" class="block TextColorGray">Poste : </label>
+            <label for="Experience" class="block TextColorGray">{{'post' | translate}} : </label>
             <input id="Experience" type="username" #poste pInputText />
           </div>
           <div class="field">
-            <label for="Experience" class="block TextColorGray">Enterprise : </label>
+            <label for="Experience" class="block TextColorGray">{{'company' | translate}} : </label>
             <input id="Experience" type="username" #enterprise pInputText />
           </div>
           <div class="field">
-            <label for="Experience" class="block TextColorGray">Period : </label>
+            <label for="Experience" class="block TextColorGray">{{'period' | translate}} : </label>
             <input id="Experience" type="date" #periode pInputText />
           </div>
           <div class="field pt-2">
-            <label for="Description" class="block TextColorGray">Details : </label>
+            <label for="Description" class="block TextColorGray">{{'details' | translate}} : </label>
             <textarea id="float-input" rows="5" cols="30" #details pInputTextarea></textarea>
           </div>
           <div class="field pt-2">
-            <label for="Description" class="block TextColorGray">Pay : </label>
+            <label for="Description" class="block TextColorGray">{{'country' | translate}} : </label>
             <input id="float-input" #pays  pInputText />
           </div>
           <div class="field">
-            <label for="Certificate" class="block TextColorGray">Select Category : </label>
+            <label for="Certificate" class="block TextColorGray">{{'selectCategory' | translate}} : </label>
             <select name="select" #catego id="selectCatogory">
-              <option class="option" ></option>
-              <option class="option" >Web developer</option>
-              <option class="option" >>Front-then developer</option>
-              <option class="option" >Back-end developer</option>
-              <option class="option" >Database manager</option>
-              <option class="option" >Mobile developer</option>
-              <option class="option" >Management controller</option>
-              <option class="option" >Others...</option>
+              <option class="option" value=""></option>
+              <option class="option"  value="">{{'webDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'frontEndDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'backEndDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'databaseManager' | translate}}</option>
+              <option class="option"  value="">{{'mobileDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'managementController' | translate}}</option>
+              <option class="option"  value="">{{'others_' | translate}}</option>
             </select>
           </div>
         </div>
@@ -73,9 +73,11 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="ExperienceADD=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)="setexperience(poste.value,enterprise.value,periode.value,details.value,pays.value,catego.value)" pButton>Submit</button>
+        <button (click)="setexperience(poste.value,enterprise.value,periode.value,details.value,pays.value,catego.value)" pButton>
+          {{'submit' | translate}}
+        </button>
       </ng-template>
     </p-dialog>
     <!-- end ADD Experience PopPup Dialog -->
@@ -87,36 +89,36 @@
         <div class="col alignText">
           <!-- Experience -->
           <div class="field">
-            <label for="Experience" class="block TextColorGray">Poste : </label>
+            <label for="Experience" class="block TextColorGray">{{'post' | translate}} : </label>
             <input id="Experience"  value="{{post}}" #postt type="username" pInputText />
           </div>
           <div class="field">
-            <label for="Experience" class="block TextColorGray">Enterprise : </label>
+            <label for="Experience" class="block TextColorGray">{{'company' | translate}} : </label>
             <input id="Experience" value="{{entrepris}}" #enterprisee type="username" pInputText />
           </div>
           <div class="field">
-            <label for="Experience" class="block TextColorGray">Period : </label>
+            <label for="Experience" class="block TextColorGray">{{'period' | translate}} : </label>
             <input id="Experience" value="{{period}}" #periodd type="date" pInputText />
           </div>
           <div class="field pt-2">
-            <label for="Description" class="block TextColorGray">Details : </label>
+            <label for="Description" class="block TextColorGray">{{'details' | translate}} : </label>
             <textarea id="float-input" value="{{detail}}" #detaill rows="5" cols="30" pInputTextarea></textarea>
           </div>
           <div class="field pt-2">
-            <label for="Description" class="block TextColorGray">Pay : </label>
+            <label for="Description" class="block TextColorGray">{{'country' | translate}} : </label>
             <input id="float-input" value="{{pay}}" #payy  pInputText />
           </div>
           <div class="field">
-            <label for="Certificate" class="block TextColorGray">Select Category : </label>
+            <label for="Certificate" class="block TextColorGray">{{'selectCategory' | translate}}: </label>
             <select name="select" value="{{cat}}" #catt  id="selectCatogory">
-              <option class="option" ></option>
-              <option class="option" >Web developer</option>
-              <option class="option" >Front-then developer</option>
-              <option class="option" >Back-end developer</option>
-              <option class="option" >Database manager</option>
-              <option class="option" >Mobile developer</option>
-              <option class="option" >Management controller</option>
-              <option class="option" >Others...</option>
+              <option class="option" value=""></option>
+              <option class="option"  value="">{{'webDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'frontEndDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'backEndDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'databaseManager' | translate}}</option>
+              <option class="option"  value="">{{'mobileDeveloper' | translate}}</option>
+              <option class="option"  value="">{{'managementController' | translate}}</option>
+              <option class="option"  value="">{{'others_' | translate}}</option>
             </select>
           </div>
         </div>
@@ -124,9 +126,11 @@
 
       <ng-template pTemplate="footer">
         <button style="background-color: #ff3838;" pButton (click)="experienceEDIT=false">&nbsp;
-          Reset
+          {{'reset' | translate}}
         </button>
-        <button (click)="updateExperience(postt.value,enterprisee.value,periodd.value,detaill.value,payy.value,catt.value)" pButton>Submit</button>
+        <button (click)="updateExperience(postt.value,enterprisee.value,periodd.value,detaill.value,payy.value,catt.value)" pButton>
+          {{'submit' | translate}}
+        </button>
       </ng-template>
     </p-dialog>
     <!-- end EDIT Experience PopPup Dialog -->
