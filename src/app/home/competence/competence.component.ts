@@ -11,8 +11,6 @@ export class CompetenceComponent implements OnInit {
 
   constructor(public crud : FirebaseService) { }
 
-  Level : number = 20 ;
-
   CompetenceADD: boolean = false;
   CompetenceEDIT: boolean = false;
 
