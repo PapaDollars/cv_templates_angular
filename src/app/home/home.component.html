@@ -5,64 +5,71 @@
 
         <i class="pi pi-bars" style="font-size: 1.5rem" (click)="SidebarModule()"></i>
 
+        <div class="translate">
+          <select (change)="selectLanguage($event)" id="">
+            <option value="en">{{'en' | translate}} </option>
+            <option value="fr">{{'fr' | translate}} </option>
+          </select>
+        </div>
+
       </div>
     </div>
     <hr>
     <div class="grid">
       <div class="col">
         <ul class="list_inline">
-          <li class="li"><a routerLink="/" (click)="SidebarModule()">
-            <i class="pi pi-info-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
-            Informations
+          <li class="li"><a routerLink="/information" (click)="SidebarModule()">
+              <i class="pi pi-info-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              Informations
             </a></li>
           <li><a routerLink="/formation" (click)="SidebarModule()">
-            <i class="pi pi-sitemap" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              <i class="pi pi-sitemap" style="font-size: 1rem"></i>&nbsp;&nbsp;
               Formations
             </a></li>
           <li><a routerLink="/experience" (click)="SidebarModule()">
-            <i class="pi pi-chart-bar" style="font-size: 1rem"></i>&nbsp;&nbsp;
-              Experience
-            </a></li>
-            <li><a routerLink="/certificate" (click)="SidebarModule()">
               <i class="pi pi-chart-bar" style="font-size: 1rem"></i>&nbsp;&nbsp;
-                Certificate
-              </a></li>
+              Experiences
+            </a></li>
+          <li><a routerLink="/certificate" (click)="SidebarModule()">
+              <i class="pi pi-chart-bar" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              {{'certificate' | translate}}
+            </a></li>
           <li><a routerLink="/competence" (click)="SidebarModule()">
-            <i class="pi pi-check-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
-              Competence
+              <i class="pi pi-check-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              Competences
             </a></li>
           <li><a routerLink="/compte" (click)="SidebarModule()">
-            <i class="pi pi-user" style="font-size: 1rem"></i>&nbsp;&nbsp;
-              Account
+              <i class="pi pi-user" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              {{'account' | translate}}
             </a></li>
           <li><a routerLink="/language" (click)="SidebarModule()">
-            <i class="pi pi-flag" style="font-size: 1rem"></i>&nbsp;&nbsp;
-              Language
+              <i class="pi pi-flag" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              {{'language' | translate}}
             </a></li>
           <li><a routerLink="/leisure" (click)="SidebarModule()">
-            <i class="pi pi-heart" style="font-size: 1rem"></i>&nbsp;&nbsp;
-              Leisure
+              <i class="pi pi-heart" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              {{'leisure' | translate}}
             </a></li>
 
-          <br><br><span style="color:#bdc3c7">Others</span>
+          <br><br><span style="color:#bdc3c7">{{'other' | translate}}</span>
           <hr style="background-color:#bdc3c7">
-          <li><a routerLink="/viewCV" (click)="SidebarModule()">
-            <i class="pi pi-eye" style="font-size: 1rem"></i>&nbsp;&nbsp;
-              View CV
+          <li><a routerLink="/" (click)="SidebarModule()">
+              <i class="pi pi-eye" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              {{'viewCV' | translate}}
             </a></li>
           <li><a routerLink="/templates" (click)="SidebarModule()">
-            <i class="pi pi-download" style="font-size: 1rem"></i>&nbsp;&nbsp;
-              Download
+              <i class="pi pi-download" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              {{'download' | translate}}
             </a></li>
           <li><a routerLink="/aboutUS" (click)="SidebarModule()">
-            <i class="pi pi-question-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
-              about us
+              <i class="pi pi-question-circle" style="font-size: 1rem"></i>&nbsp;&nbsp;
+              {{'aboutUS' | translate}}
             </a></li><br><br>
 
-            <li><a (click)="logout()">
+          <li><a (click)="logout()">
               <i class="pi pi-sign-in" style="font-size: 1rem"></i>&nbsp;&nbsp;
-                Log Out
-              </a></li>
+              {{'logOut' | translate}}
+            </a></li>
         </ul>
       </div>
     </div>
@@ -73,10 +80,9 @@
     <div class="grid">
       <div class="col menuBar">
 
-     <i class="pi pi-bars" style="font-size: 1.5rem"
-     (click)="SidebarModule()"></i>
+        <i class="pi pi-bars" style="font-size: 1.5rem" (click)="SidebarModule()"></i>
 
-    </div>
+      </div>
     </div>
 
     <div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import { IUsers } from '../home/information/appJSON';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-connection',
   templateUrl: './connection.component.html',
@@ -12,7 +13,12 @@ export class ConnectionComponent implements OnInit {
   isLogin: boolean | undefined;
   isSignin: boolean = true;
 
-  constructor(public firebaseservice : FirebaseService,public cruds : FirebaseService, public crud : AngularFirestore) { }
+  constructor(private translateService: TranslateService ,public firebaseservice : FirebaseService,public cruds : FirebaseService, public crud : AngularFirestore) { }
+
+  public selectLanguage(event:any){
+    this.translateService.use(event.target.value);
+  }
+
   pwd1 : any ="";
   mail : any;
   email : string = "";
@@ -24,7 +30,7 @@ export class ConnectionComponent implements OnInit {
     this.isSignin = true;
     this.isLogin = true;
   }
-   info !: any[]; 
+   info !: any[];
   ngOnInit() {
     if(localStorage.getItem("user")!= null)
     {
@@ -40,7 +46,7 @@ export class ConnectionComponent implements OnInit {
       console.log(data) ;
     })
   }
-   
+
 
 
    onssignedup(email : string , pwd : string){

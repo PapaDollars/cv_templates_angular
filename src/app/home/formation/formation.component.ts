@@ -32,7 +32,7 @@ export class FormationComponent implements OnInit {
       { diploma: 'Diploma_1', date: '15/10/2020', school: 'College Moderne', icon: PrimeIcons.SHOPPING_CART, color: '#9C27B0' },
       { diploma: 'Diploma_2', date: '15/10/2020', school: 'Lycee Bilingue', icon: PrimeIcons.COG, color: '#673AB7' },
     ];
-     
+
     // this.cruds.get_user().subscribe(data  =>{
     //   // console.log(data[0].mail);
     //   this.info =data;
@@ -43,9 +43,9 @@ export class FormationComponent implements OnInit {
 
   setformation(diplome : string, ecole : string , period : string , catego : string)
   {
-   
+
     let Record = {
-      
+
       'diplome':diplome,
       'ecole':ecole,
       'periode':period,
@@ -63,7 +63,7 @@ export class FormationComponent implements OnInit {
 
   updateFormation(diplome : string, ecole : string , period : string , catego : string)
   {
-     
+
   }
 
   DeleteFormation(Record : any)

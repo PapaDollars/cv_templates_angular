@@ -22,49 +22,58 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { Template2Component } from './home/templates/template2/template2.component';
 
-import {AccordionModule} from 'primeng/accordion';
-import {MenuModule} from 'primeng/menu';
-import {ButtonModule} from 'primeng/button';
-import {InputTextModule} from 'primeng/inputtext';
-import {PasswordModule} from 'primeng/password';
-import {PanelModule} from 'primeng/panel';
-import {TabViewModule} from 'primeng/tabview';
-import {SpeedDialModule} from 'primeng/speeddial';
-import { SidebarModule} from 'ng-sidebar';
-import {FieldsetModule} from 'primeng/fieldset';
-import {DialogModule} from 'primeng/dialog';
-import {InputTextareaModule} from 'primeng/inputtextarea';
-import {TimelineModule} from 'primeng/timeline';
-import {SliderModule} from 'primeng/slider';
-import {ImageModule} from 'primeng/image';
-import {FileUploadModule} from 'primeng/fileupload';
-import {HttpClientModule} from '@angular/common/http';
+
+import { AccordionModule } from 'primeng/accordion';
+import { MenuModule } from 'primeng/menu';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { PanelModule } from 'primeng/panel';
+import { TabViewModule } from 'primeng/tabview';
+import { SpeedDialModule } from 'primeng/speeddial';
+import { SidebarModule } from 'ng-sidebar';
+import { FieldsetModule } from 'primeng/fieldset';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TimelineModule } from 'primeng/timeline';
+import { SliderModule } from 'primeng/slider';
+import { ImageModule } from 'primeng/image';
+import { FileUploadModule } from 'primeng/fileupload';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { FirebaseService } from './firebase.service';
 import { NgModel } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/translates/', '.json');
+}
 
 @NgModule({
   declarations: [
     AppComponent,
-      HomeComponent,
-      ConnectionComponent,
-      InformationComponent,
-      FormationComponent,
-      AboutUSComponent,
-      CompetenceComponent,
-      CompteComponent,
-      ExperienceComponent,
-      LanguageComponent,
-      LeisureComponent,
-      TemplatesComponent,
-      ViewCVComponent,
-      Template1Component,
-      CertificateComponent,
+    HomeComponent,
+    ConnectionComponent,
+    InformationComponent,
+    FormationComponent,
+    AboutUSComponent,
+    CompetenceComponent,
+    CompteComponent,
+    ExperienceComponent,
+    LanguageComponent,
+    LeisureComponent,
+    TemplatesComponent,
+    ViewCVComponent,
+    Template1Component,
+    Template2Component,
+    CertificateComponent,
 
-   ],
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -90,7 +99,15 @@ import { NgxPrintModule } from 'ngx-print';
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFirestoreModule,
-    NgxPrintModule
+    NgxPrintModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

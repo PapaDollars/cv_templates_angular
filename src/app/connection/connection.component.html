@@ -1,33 +1,36 @@
 <div class="grid">
   <div class="col card">
-    <p-tabView  *ngIf="isConnection" >
+    <p-tabView *ngIf="isConnection">
+
 
       <!-- Sign in -->
 
-      <p-tabPanel header="Sign In"  >
+      <p-tabPanel header="Sign In">
         <div class="grid" style="background-color:#f1f2f6">
           <div class="col alignText">
 
             <h1 class="titleConnection">
               <i class="pi pi-user" style="font-size: 3rem"></i>
-              <br> &nbsp;Sign Up
+              <br> &nbsp;{{'signin' | translate}}
             </h1>
 
             <!-- address -->
             <div class="field">
-              <label for="address" class="block TextColorGray">Address Email : </label>
-              <input id="address" type="mailto" pInputText pTooltip="Enter your Address Email" #emails tooltipPosition="top" />
+              <label for="address" class="block TextColorGray">{{'EmailAddress' | translate}} : </label>
+              <input id="address" type="mailto" pInputText pTooltip="Enter your Address Email" #emails
+                tooltipPosition="top" />
             </div><br>
 
             <!-- password -->
             <div class="field">
-              <label for="password" class="block TextColorGray">Password : </label>
+              <label for="password" class="block TextColorGray">{{'Password' | translate}} : </label>
               <input id="password" type="password" #password pPassword />
             </div><br><br><br><br>
 
             <!-- button valid -->
-            <button pButton type="button" label="Connect" class="p-button-primary"
-              style="border-color:#0abde3; background:#0abde3" (click)="onssignedin(emails.value , password.value)">
+            <button pButton type="button" class="p-button-primary" style="border-color:#0abde3; background:#0abde3"
+              (click)="onssignedin(emails.value , password.value)">
+              {{'connect' | translate}}
             </button>
 
           </div>
@@ -42,79 +45,91 @@
 
             <h1 class="titleRegister alignText">
               <i class="pi pi-user-plus" style="font-size: 3rem"></i>
-              <br> &nbsp;Sign Up
+              <br> &nbsp;{{'signup' | translate}}
             </h1>
 
             <!-- First Step -->
-            <strong class="colorSTEP">FIRST STEP</strong><br><br><br>
+            <strong class="colorSTEP">{{'firstStep' | translate}}</strong><br><br><br>
 
             <div class="Fiest_step alignText">
               <!-- firstName -->
               <div class="field">
-                <label for="FirstName" class="block TextColorGray">First Name : </label>
+                <label for="FirstName" class="block TextColorGray">{{'firstName' | translate}} : </label>
                 <input id="FirstName" type="username" #prenom pInputText />
               </div>
 
               <!-- lastName -->
               <div class="field">
-                <label for="lastName" class="block TextColorGray">Last Name : </label>
+                <label for="lastName" class="block TextColorGray">{{'lastName' | translate}} : </label>
                 <input id="lastName" type="username" #nom pInputText />
               </div>
             </div><br><br><br><br>
 
             <!-- Second Step -->
-            <strong class="colorSTEP">SECOND STEP</strong>
+            <strong class="colorSTEP">{{'secondStep' | translate}}</strong>
             <hr><br><br>
 
             <div class="Second_step alignText">
               <!-- birth date -->
               <div class="field">
-                <label for="birthDate" class="block TextColorGray">Birth Date : </label>
+                <label for="birthDate" class="block TextColorGray">{{'birthDate' | translate}} : </label>
                 <input id="birthDate" type="date" #dateN pInputText />
               </div>
 
               <!-- birthplace -->
               <div class="field">
-                <label for="birthPlace" class="block TextColorGray">Birth Place :
+                <label for="birthPlace" class="block TextColorGray">{{'birthPlace' | translate}} :
                 </label>
                 <input id="birthPlace" type="username" #LiueN pInputText />
               </div>
 
               <!-- address -->
               <div class="field">
-                <label for="address" class="block TextColorGray">Address Email :
+                <label for="address" class="block TextColorGray">{{'EmailAddress' | translate}} :
                 </label>
-                <input id="address" type="mailto"  pInputText #mail  />
+                <input id="address" type="mailto" pInputText #mail />
               </div>
             </div><br><br><br><br>
 
             <!-- THRID STEP -->
-            <strong class="colorSTEP">THIRD STEP</strong>
+            <strong class="colorSTEP">{{'thirdStep' | translate}}</strong>
             <hr><br><br>
 
             <div class=" thrid_step alignText">
               <!-- password -->
               <div class="field">
-                <label for="password" class="block TextColorGray">Password : </label>
-                <input id="password" type="password" pPassword  #pwd1>
+                <label for="password" class="block TextColorGray">{{'Password' | translate}} : </label>
+                <input id="password" type="password" pPassword #pwd1>
               </div>
 
               <!-- confirm password -->
               <div class="field">
-                <label for="confirmPassword" class="block TextColorGray">Confirm Password :
+                <label for="confirmPassword" class="block TextColorGray">{{'ConfirmPassword' | translate}} :
                 </label><br>
-                <input id="confirmPassword" type="password" pPassword  #pwd2>
+                <input id="confirmPassword" type="password" pPassword #pwd2>
               </div>
               <br><br><br><br>
 
               <!-- button valid -->
-              <button (click)="sigmups(prenom.value,nom.value,dateN.value,LiueN.value,mail.value,pwd1.value,pwd2.value)" pButton type="button" label="Register" class="p-button-success"
-                style="border-color:#00b894; background:#00b894">
+              <button (click)="sigmups(prenom.value,nom.value,dateN.value,LiueN.value,mail.value,pwd1.value,pwd2.value)"
+                pButton type="button" class="p-button-success" style="border-color:#00b894; background:#00b894">
+                {{'register' | translate}}
               </button>
 
             </div>
 
           </div>
+        </div>
+      </p-tabPanel>
+
+      <!-- Language translate -->
+
+      <p-tabPanel header="Language">
+        <div class="grid" style="background-color:#f1f2f6">
+          <select (change)="selectLanguage($event)" id="">
+            <option value="en">{{'en' | translate}} </option>
+            <option value="fr">{{'fr' | translate}} </option>
+          </select>
         </div>
       </p-tabPanel>
 
