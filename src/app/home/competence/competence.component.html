@@ -41,7 +41,7 @@
           </div>
           <div class="field">
             <label for="Certificate" class="block TextColorGray">{{'selectCategory' | translate}} : </label>
-            <select name="select"  #catego id="selectCatogory">
+            <select name="select"  #catego type="text" id="selectCatogory">
               <option class="option" value=""></option>
               <option class="option" >{{'webDeveloper' | translate}}</option>
               <option class="option" >{{'frontEndDeveloper' | translate}}</option>
@@ -78,7 +78,7 @@
           </div>
           <div class="field">
             <label for="Competence" class="block TextColorGray"> {{'level' | translate}} : </label>
-            <input id="Competence" value="{{niveau_}}" type="text" #niveaus pInputText readonly/>
+            <input id="Competence" value="{{niveau_}}" type="text" #niveaus pInputText />
           </div>
           <div class="field">
             <label for="Certificate" class="block TextColorGray">{{'selectCategory' | translate}} : </label>

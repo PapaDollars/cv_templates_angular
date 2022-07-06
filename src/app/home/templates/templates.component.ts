@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { jsPDF } from "jspdf";
+import { FirebaseService } from 'src/app/firebase.service';
 
 @Component({
   selector: 'app-templates',
@@ -8,7 +9,7 @@ import { jsPDF } from "jspdf";
 })
 export class TemplatesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cruds : FirebaseService) { }
 
   // function download template 1 in PDF
   @ViewChild('content1', { static: false }) element1!: ElementRef;
@@ -18,7 +19,7 @@ export class TemplatesComponent implements OnInit {
     if (getDisplay.classList != null) {
       getDisplay.style.display = "block";
 
-      let pdf = new jsPDF('p', 'pt', 'a3');
+      let pdf = new jsPDF('p', 'pt', 'a1');
       pdf.html(this.element1.nativeElement, {
         callback: (pdf) => {
           pdf.save("generateCV_Template_1.pdf");
@@ -112,8 +113,13 @@ export class TemplatesComponent implements OnInit {
         });
       }
     }
-
+    info!: any[];
   ngOnInit() {
+    this.cruds.get_user().subscribe(data  =>{
+      // console.log(data[0].mail);
+      this.info =data;
+      console.log(data) ;
+    })
   }
 
 }

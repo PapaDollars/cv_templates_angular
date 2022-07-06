@@ -5,35 +5,66 @@
     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 bg_color2 ">
 
       <div class="bg_color1 rounded pt-2">
-        <img src="./assets/images/profil.png" class="rounded profil"
-            width="150" height="140" alt="profil" />
+        <img src="soutenance.jpg" class="rounded profil" width="150"height="140" alt="profil" />
+
       </div>
 
       <div class="pt-5 pl-4 pb-5 padding bg_color1 mb-5 rounded">
 
+        <div>
+          <span>Nom :{{info[0].nom}}</span><br>
+          <span>Prenom : :{{info[0].prenom}}</span><br>
+          <span>date de Nassance : {{info[0].dateNaissance}}</span><br>
+          <span>lieu de Nassance : {{info[0].site}}</span><br>
+         </div><hr>
+
        <div>
         <h5>Contact :</h5>
-        <span>234567890</span><br>
-        <span>234567890</span>
+        <li *ngFor="let num of contacts">
+          {{num.contact}}&nbsp;&nbsp;
+
+        </li>
        </div><hr>
 
        <div>
          <h5>Mail :</h5>
-         <p>iya@gmail.com</p>
+         <li *ngFor="let mail of emails">
+          {{mail.email}}
+      </li>
        </div><hr>
 
        <div>
          <h5>Social networks : </h5>
-         <span>Stackoverflow</span><br>
-         <span>Github</span><br>
-         <span>Linkedin</span>
+       <ul *ngFor="let comptes of compte">
+        <li>
+          Platform : {{comptes.titre}} <br>
+          Lien : {{comptes.lien}}
+        </li>
+       </ul>
        </div><hr>
 
        <div>
          <h5>Langue : </h5>
-         <span>Francais</span><br>
-         <span>Anglais</span>
-       </div>
+         <ul>
+          <li *ngFor="let langues of langue">
+           Nom:  {{langues.nom}}<br>
+          Niveau:  {{langues.niveau}}
+
+          </li>
+
+        </ul>
+       </div><hr>
+
+       <div>
+        <h5>Loisirs : </h5>
+        <ul *ngFor="let loisirs of loisir">
+          <li>
+            {{loisirs.nom}}&nbsp;&nbsp;
+
+          </li>
+
+        </ul>
+      </div>
 
       </div>
     </div>
@@ -41,44 +72,64 @@
     <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 bg_color2 ">
 
       <div class="text-center pt-5">
-        <h1>template1 works!</h1>
+        <h1>{{info[0].nom}} {{info[0].prenom}}</h1>
         <hr>
-        <div>
-          <h5>Address</h5>
-          <span>Univ Yaounde 1</span>
-        </div>
-      </div>
-
-      <div class="padding_obj">
-        <h5>Objective</h5>
-        <p>Objectif <br>
-          Objectif Objectif</p>
-      </div>
-
-      <div class="pt-3">
-        <h5>Doplome</h5>
-        <p>BEPC <br>
-          Probatoire <br>
-          Baccalaureat </p>
+        <h5>Description</h5>
+        <p>{{info[0].biographie}}</p>
       </div>
 
       <div class="pt-3">
         <h5>Formation</h5>
-        <p>Formation</p>
+        <hr>
+        <ul *ngFor="let  formation of  formation">
+              <li>
+                Diplome : {{formation.diplome}}<br>
+                Ecole :   {{formation.ecole}}<br>
+                Periode :  {{formation.periode}}<br>
+                Categorie : {{formation.categorie}}
+              </li>
+        </ul>
       </div>
 
       <div class="pt-3">
+        <h5>Competence</h5>
+        <hr>
+        <ul  *ngFor="let  compt of competemce">
+          <li>
+            Titre :  {{compt.titre}}<br>
+            Niveau : {{compt.niveau}}<br>
+            Categorie : {{compt.categorie}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="pt-3">
+        <h5>Certification</h5>
+        <hr>
+       <ul *ngFor="let cert of certifcation">
+        <li>
+          Titre : {{cert.titre}} <br>
+          Organisme : {{cert.organisme}} <br>
+          Categorie : {{cert.categorie}}
+        </li>
+       </ul>
+      </div>
+
+
+
+      <div class="pt-3">
         <h5>Experiences Profionnels</h5>
-        <p>Experiences Profionnels</p>
+        <hr>
+        <ul  *ngFor="let event of experience">
+          <li>
+             Entreeprise : {{event.entreprise}} <br>
+             Periode : {{event.periode}} <br>
+             Categorie : {{event.categorie}}
+          </li>
+        </ul>
       </div>
 
     </div>
 
   </div>
 </div>
-<button [printStyle]="{
-  p:{'color':'green'},
-  h5:{'color':'red'},
-  div:{}
-}"
-  printSectionId="prints" ngxPrint>ok</button>

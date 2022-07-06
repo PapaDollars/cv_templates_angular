@@ -37,13 +37,13 @@ export class CompetenceComponent implements OnInit {
     })
   }
     categorie1 !: string;
-  setcompetence(titre : string , niveau : string)
+  setcompetence(titre : string , niveau : string,categorie1: string )
   {
-    console.log(this.categorie1+'jjjj');
+
     let Record = {
       'titre' : titre,
       'niveau' : <number><any>niveau,
-      'categorie' : this.categorie1,
+      'categorie' : categorie1,
       'mail' : ''
     }
     this.crud.create_competence(Record).then(res =>{
